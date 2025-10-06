@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Chidon Worldwide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Chidon Worldwide - Admin</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="login-section">
+            <h1 class="page-title">Admin Login</h1>
+            <form id="login-form" class="admin-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+
+        <div id="dashboard-section" style="display: none;">
+            <h1 class="page-title">Admin Dashboard</h1>
+            <button id="logout-btn" class="btn btn-secondary">Logout</button>
+
+            <div class="dashboard-content">
+                <div class="product-management">
+                    <h2>Manage Products</h2>
+                    <form id="add-product-form" class="admin-form">
+                        <h3>Add New Product</h3>
+                        <input type="hidden" id="product-id">
+                        <input type="text" id="product-name" placeholder="Product Name" required>
+                        <textarea id="product-description" placeholder="Product Description" required></textarea>
+                        <input type="number" id="product-price" placeholder="Price" step="0.01" required>
+                        <input type="text" id="product-category" placeholder="Category" required>
+                        <input type="file" id="product-image" accept="image/*">
+                        <button type="submit" class="btn">Save Product</button>
+                    </form>
+                </div>
+                <div class="product-list-container">
+                    <h2>Existing Products</h2>
+                    <div id="admin-product-list"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chidon Worldwide. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+
+    <!-- Project Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
