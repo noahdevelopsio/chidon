@@ -1,17 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- MOBILE NAVIGATION --- //
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (navToggle) {
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    }
+    // Initialize Feather Icons
+    feather.replace();
 
     // --- FIREBASE & PAGE-SPECIFIC LOGIC --- //
-    const page = document.body.id;
     const pathname = window.location.pathname;
 
     // Check if Firebase is initialized
@@ -23,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- SHOP PAGE LOGIC --- //
         if (pathname.includes('shop.html')) {
             loadProducts(db);
+            setupFilters(db);
         }
 
         // --- ADMIN PAGE LOGIC --- //
@@ -32,9 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         if (pathname.includes('shop.html') || pathname.includes('admin.html')) {
             console.error('Firebase is not initialized. Please check your firebase-config.js');
-            // Optionally display a message to the user on the page
             const productGrid = document.getElementById('product-grid');
-            if(productGrid) productGrid.innerHTML = '<p>Error: Could not connect to the database. Please configure Firebase.</p>';
+            if(productGrid) productGrid.innerHTML = '<p class="text-danger">Error: Could not connect to the database. Please configure Firebase.</p>';
         }
     }
 });
@@ -42,30 +33,49 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * Loads products from Firestore and displays them on the Shop page.
  * @param {firebase.firestore.Firestore} db - The Firestore database instance.
+ * @param {Object} filters - Optional filters for category and search query.
  */
-function loadProducts(db) {
+function loadProducts(db, filters = {}) {
     const productGrid = document.getElementById('product-grid');
     if (!productGrid) return;
 
     const phoneNumber = '+61412345678'; // IMPORTANT: Replace with your WhatsApp number
 
-    db.collection('products').orderBy('name').get().then((querySnapshot) => {
+    let query = db.collection('products');
+
+    if (filters.category && filters.category !== 'All Categories') {
+        query = query.where('category', '==', filters.category);
+    }
+
+    query.orderBy('name').get().then((querySnapshot) => {
         if (querySnapshot.empty) {
             productGrid.innerHTML = '<p>No products found. Add some in the admin dashboard!</p>';
             return;
         }
-        let html = '';
+
+        let products = [];
         querySnapshot.forEach((doc) => {
-            const product = doc.data();
+            products.push({ id: doc.id, ...doc.data() });
+        });
+
+        if (filters.search) {
+            const searchTerm = filters.search.toLowerCase();
+            products = products.filter(product => product.name.toLowerCase().includes(searchTerm));
+        }
+
+        let html = '';
+        products.forEach((product) => {
             const whatsappLink = `https://wa.me/${phoneNumber}?text=Hi!%20I'm%20interested%20in%20${encodeURIComponent(product.name)}.`;
             html += `
-                <div class="product-card">
-                    <img src="${product.imageUrl || 'images/placeholder.jpg'}" alt="${product.name}">
-                    <div class="product-info">
-                        <h3>${product.name}</h3>
-                        <p>${product.description}</p>
-                        <div class="product-price">$${product.price.toFixed(2)}</div>
-                        <a href="${whatsappLink}" target="_blank" class="btn">Order on WhatsApp</a>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <img src="${product.imageUrl || 'images/placeholder.jpg'}" class="card-img-top" alt="${product.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text">${product.description}</p>
+                            <p class="card-text fw-bold">$${product.price.toFixed(2)}</p>
+                            <a href="${whatsappLink}" target="_blank" class="btn btn-primary">Order on WhatsApp</a>
+                        </div>
                     </div>
                 </div>
             `;
@@ -73,8 +83,26 @@ function loadProducts(db) {
         productGrid.innerHTML = html;
     }).catch(error => {
         console.error('Error fetching products: ', error);
-        productGrid.innerHTML = '<p>Could not fetch products. Please try again later.</p>';
+        productGrid.innerHTML = '<p class="text-danger">Could not fetch products. Please try again later.</p>';
     });
+}
+
+/**
+ * Sets up the category and search filters for the Shop page.
+ * @param {firebase.firestore.Firestore} db - The Firestore database instance.
+ */
+function setupFilters(db) {
+    const categoryFilter = document.getElementById('category-filter');
+    const searchBar = document.getElementById('search-bar');
+
+    const applyFilters = () => {
+        const category = categoryFilter.value;
+        const search = searchBar.value;
+        loadProducts(db, { category, search });
+    };
+
+    categoryFilter.addEventListener('change', applyFilters);
+    searchBar.addEventListener('input', applyFilters);
 }
 
 /**
@@ -166,15 +194,21 @@ function handleAdminPage(auth, db, storage) {
             snapshot.forEach(doc => {
                 const product = doc.data();
                 html += `
-                    <div class="product-card">
-                        <img src="${product.imageUrl || 'images/placeholder.jpg'}" alt="${product.name}">
-                        <div class="product-info">
-                            <h3>${product.name}</h3>
-                            <p>$${product.price.toFixed(2)}</p>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn-edit" data-id="${doc.id}">Edit</button>
-                            <button class="btn-delete" data-id="${doc.id}">Delete</button>
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="${product.imageUrl || 'images/placeholder.jpg'}" class="img-fluid rounded-start" alt="${product.name}">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${product.name}</h5>
+                                        <p class="card-text">$${product.price.toFixed(2)}</p>
+                                        <button class="btn btn-sm btn-primary btn-edit" data-id="${doc.id}">Edit</button>
+                                        <button class="btn btn-sm btn-danger btn-delete" data-id="${doc.id}">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 `;

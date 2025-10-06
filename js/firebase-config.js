@@ -4,6 +4,7 @@
 // 1. Go to your Firebase project console.
 // 2. In the project settings, find your web app's configuration object.
 // 3. Copy the object and paste it here.
+// IMPORTANT: Replace the placeholder values with your actual Firebase project configuration.
 
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
