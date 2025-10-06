@@ -1,4 +1,4 @@
-
+ 
 :root {
     --primary-color: #2a9d8f;
     --secondary-color: #e9c46a;
@@ -144,7 +144,7 @@ body {
 footer {
     background-color: var(--dark-gray);
     color: var(--light-gray);
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 footer .social-icons a {

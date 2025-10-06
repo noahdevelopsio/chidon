@@ -25,6 +25,11 @@
         padding: 0.75rem 0.5rem;
     }
 
+    .bottom-nav .nav-link span {
+        display: block;
+        font-size: 0.75rem;
+    }
+
     body {
         padding-bottom: 70px; /* To prevent content from being hidden by the bottom nav */
     }
