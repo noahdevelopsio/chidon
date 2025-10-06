@@ -1,18 +1,37 @@
 /* General Styles */
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: #f8f5f2;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
 }
 
 .hero-section {
-    background: url('../images/hero-bg.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg') no-repeat center center;
     background-size: cover;
     color: white;
-    padding: 100px 0;
+    padding: 150px 0;
+}
+
+.btn-primary {
+    background-color: #c89f68;
+    border-color: #c89f68;
+}
+
+.btn-primary:hover {
+    background-color: #b38b5c;
+    border-color: #b38b5c;
 }
 
 .featured-categories .card {
     cursor: pointer;
     transition: transform 0.2s;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .featured-categories .card:hover {
@@ -21,7 +40,7 @@ body {
 
 .featured-categories .card i {
     font-size: 2.5rem;
-    color: #007bff;
+    color: #c89f68;
 }
 
 .map-container {
@@ -40,8 +59,8 @@ body {
 }
 
 footer {
-    background-color: #343a40;
-    padding: 20px 0;
+    background-color: #2c3e50;
+    padding: 40px 0;
 }
 
 /* Shop Page */
@@ -57,6 +76,6 @@ footer {
 
 /* Top Bar */
 .top-bar {
-    background-color: #007bff;
+    background-color: #2c3e50;
     font-weight: 600;
 }
