@@ -1,159 +1,62 @@
- 
-:root {
-    --primary-color: #2a9d8f;
-    --secondary-color: #e9c46a;
-    --accent-color: #f4a261;
-    --text-color: #264653;
-    --bg-color: #f7fff7;
-    --light-gray: #e5e5e5;
-    --dark-gray: #333;
-    --font-family: 'Montserrat', sans-serif;
-    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
-    --border-radius: .5rem;
-}
-
+/* General Styles */
 body {
-    font-family: var(--font-family);
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    padding-top: 70px;
-    transition: background-color 0.3s ease;
-}
-
-.navbar {
-    box-shadow: none;
-    background-color: transparent;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    padding: 1rem 0;
-}
-
-.navbar-scrolled {
-    background-color: #fff;
-    box-shadow: var(--box-shadow);
-}
-
-.navbar-brand {
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: var(--primary-color);
-}
-
-.nav-link {
-    font-weight: 600;
-    color: var(--text-color);
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: var(--accent-color);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../images/hero-bg.jpg') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 120px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-section .display-4 {
-    font-weight: 800;
-    font-size: 3.5rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.hero-section p {
-    font-size: 1.2rem;
-}
-
-.btn {
-    border-radius: var(--border-radius);
-    padding: 12px 30px;
-    font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-primary {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background-color: #f09148;
-    border-color: #f09148;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: url('../images/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 100px 0;
 }
 
 .featured-categories .card {
-    border: none;
-    border-radius: var(--border-radius);
-    box-shadow: none;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .featured-categories .card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--box-shadow);
-}
-
-.featured-categories .card-body {
-    text-align: center;
+    transform: translateY(-5px);
 }
 
 .featured-categories .card i {
-    width: 60px;
-    height: 60px;
-    color: #fff;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    line-height: 60px;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.featured-categories .card:hover i {
-    background-color: var(--accent-color);
+    font-size: 2.5rem;
+    color: #007bff;
 }
 
 .map-container {
-    border-radius: var(--border-radius);
+    position: relative;
     overflow: hidden;
-    box-shadow: var(--box-shadow);
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
 
-.testimonial {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.blockquote-footer {
-    color: var(--secondary-color);
-    font-weight: 600;
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 footer {
-    background-color: var(--dark-gray);
-    color: var(--light-gray);
-    padding: 2rem 0;
+    background-color: #343a40;
+    padding: 20px 0;
 }
 
-footer .social-icons a {
-    color: var(--light-gray);
-    font-size: 1.5rem;
-    margin: 0 0.5rem;
-    transition: color 0.3s ease;
+/* Shop Page */
+.product-card {
+    margin-bottom: 20px;
 }
 
-footer .social-icons a:hover {
-    color: var(--accent-color);
+.product-card .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #007bff;
+    font-weight: 600;
 }
