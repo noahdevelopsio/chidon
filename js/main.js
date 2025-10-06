@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Add a scroll event listener for the navbar
+    const navbar = document.querySelector('.navbar');
+    if(navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    }
+
     // Initialize Feather Icons
     feather.replace();
 
