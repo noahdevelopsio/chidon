@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
     <div class="top-bar text-center text-white py-2">
-        Chidon Kitchen
+        Free Shipping on Orders Over $50
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Chidon Kitchen</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,46 +24,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <i data-feather="home"></i>
-                            <span class="d-none d-lg-inline">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.html">
-                            <i data-feather="shopping-cart"></i>
-                            <span class="d-none d-lg-inline">Shop</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="about.html">
-                            <i data-feather="info"></i>
-                            <span class="d-none d-lg-inline">About</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            <i data-feather="mail"></i>
-                            <span class="d-none d-lg-inline">Contact</span>
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <main class="container my-5">
-        <h1 class="text-center mb-4">Our Story</h1>
-        <div class="row">
+        <h1 class="text-center mb-5">Our Story</h1>
+        <div class="row align-items-center">
             <div class="col-md-6">
                 <h2>From Our Family to Yours</h2>
                 <p>Chidon Kitchen started with a simple idea: to bring high-quality, durable, and beautiful kitchen tools to families everywhere. We believe that the kitchen is the heart of the home, a place for creation, connection, and joy. Our mission is to provide the tools that make that experience even more special.</p>
                 <p>Founded in 2020, we've grown from a small local shop to a beloved brand, known for our commitment to quality and our passion for cooking. Every product we offer is carefully selected and tested to meet our high standards. We hope you'll love them as much as we do.</p>
             </div>
             <div class="col-md-6">
-                <div id="storeCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
+                <div id="storeCarousel" class="carousel slide rounded shadow-lg" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded">
                         <div class="carousel-item active">
                             <img src="images/store-front.jpg" class="d-block w-100" alt="Chidon Kitchen store front">
                         </div>
@@ -86,50 +66,45 @@
 
     <footer class="text-white text-center">
         <div class="container">
-            <p>&copy; 2025 Chidon Kitchen. All Rights Reserved.</p>
-            <div class="social-icons">
-                <a href="#" class="text-white me-3"><i data-feather="facebook"></i></a>
-                <a href="#" class="text-white me-3"><i data-feather="instagram"></i></a>
-                <a href="#" class="text-white"><i data-feather="twitter"></i></a>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Chidon Kitchen</h5>
+                    <p>Crafting quality tools to inspire culinary creativity in every home.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Stay Connected</h5>
+                    <p>Subscribe to our newsletter for the latest arrivals and special offers.</p>
+                    <form class="d-flex justify-content-center">
+                        <input type="email" class="form-control me-2" placeholder="Enter your email">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-3"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-white"><i data-feather="twitter"></i></a>
+                    </div>
+                </div>
             </div>
+            <hr class="my-4">
+            <p>&copy; 2025 Chidon Kitchen. All Rights Reserved.</p>
         </div>
     </footer>
-
+    
     <nav class="navbar navbar-expand-lg bottom-nav d-lg-none">
         <div class="container">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        <i data-feather="home"></i>
-                        <span class="d-lg-none">Home</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="shop.html">
-                        <i data-feather="shopping-cart"></i>
-                        <span class="d-lg-none">Shop</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="about.html">
-                        <i data-feather="info"></i>
-                        <span class="d-lg-none">About</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">
-                        <i data-feather="mail"></i>
-                        <span class="d-lg-none">Contact</span>
-                    </a>
-                </li>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html"><i data-feather="home"></i><span>Home</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html"><i data-feather="shopping-cart"></i><span>Shop</span></a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html"><i data-feather="info"></i><span>About</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html"><i data-feather="mail"></i><span>Contact</span></a></li>
             </ul>
         </div>
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
-        feather.replace()
-    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

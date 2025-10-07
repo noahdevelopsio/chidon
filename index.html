@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
     <div class="top-bar text-center text-white py-2">
-        Chidon Kitchen
+        Free Shipping on Orders Over $50
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-none d-lg-block">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Chidon Kitchen</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,144 +24,133 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">
-                            <i data-feather="home"></i>
-                            <span class="d-none d-lg-inline">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.html">
-                            <i data-feather="shopping-cart"></i>
-                            <span class="d-none d-lg-inline">Shop</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">
-                            <i data-feather="info"></i>
-                            <span class="d-none d-lg-inline">About</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            <i data-feather="mail"></i>
-                            <span class="d-none d-lg-inline">Contact</span>
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section">
-        <div class="container text-center">
-            <h1 class="display-4">Tools for Every Kitchen</h1>
-            <p class="lead">Quality utensils that inspire culinary creativity.</p>
-            <a href="shop.html" class="btn btn-primary btn-lg">Shop Now</a>
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4">Inspiring Culinary Creativity</h1>
+            <p class="lead">Discover high-quality tools that elevate your cooking experience.</p>
+            <a href="shop.html" class="btn btn-primary btn-lg mt-3">Shop Now</a>
         </div>
     </header>
 
     <main class="container my-5">
         <section class="featured-categories text-center py-5">
-            <h2 class="mb-5">Featured Categories</h2>
+            <h2 class="mb-5">Shop by Category</h2>
             <div class="row">
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="card h-100">
+                <div class="col-md-3 col-sm-6 mb-4"><div class="card h-100"><div class="card-body"><i data-feather="coffee" class="mb-3"></i><h5 class="card-title">Cookware</h5></div></div></div>
+                <div class="col-md-3 col-sm-6 mb-4"><div class="card h-100"><div class="card-body"><i data-feather="scissors" class="mb-3"></i><h5 class="card-title">Cutlery</h5></div></div></div>
+                <div class="col-md-3 col-sm-6 mb-4"><div class="card h-100"><div class="card-body"><i data-feather="archive" class="mb-3"></i><h5 class="card-title">Storage</h5></div></div></div>
+                <div class="col-md-3 col-sm-6 mb-4"><div class="card h-100"><div class="card-body"><i data-feather="tool" class="mb-3"></i><h5 class="card-title">Utensils</h5></div></div></div>
+            </div>
+        </section>
+
+        <section class="new-arrivals text-center py-5 bg-white rounded">
+            <h2 class="mb-5">New Arrivals</h2>
+            <div class="row">
+                <!-- Example Product -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/new-arrival-1.jpg" class="card-img-top" alt="New Product">
                         <div class="card-body">
-                            <i data-feather="coffee" class="mb-3"></i>
-                            <h5 class="card-title">Cookware</h5>
+                            <h5 class="card-title">Artisan Bread Lame</h5>
+                            <p class="card-text">$24.99</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="card h-100">
+                 <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/new-arrival-2.jpg" class="card-img-top" alt="New Product">
                         <div class="card-body">
-                            <i data-feather="scissors" class="mb-3"></i>
-                            <h5 class="card-title">Cutlery</h5>
+                            <h5 class="card-title">Cast Iron Skillet</h5>
+                            <p class="card-text">$49.99</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="card h-100">
+                 <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/new-arrival-3.jpg" class="card-img-top" alt="New Product">
                         <div class="card-body">
-                            <i data-feather="archive" class="mb-3"></i>
-                            <h5 class="card-title">Storage</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <i data-feather="tool" class="mb-3"></i>
-                            <h5 class="card-title">Utensils</h5>
+                            <h5 class="card-title">Acacia Wood Cutting Board</h5>
+                            <p class="card-text">$39.99</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="visit-store my-5 py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center mb-4">Visit Our Store</h2>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086228141335!2d144.9537353159042!3d-37.81720997975164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1678886688888!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials text-center py-5">
-            <div class="container">
-                <h2 class="mb-4">From Our Customers</h2>
-                <div class="testimonial">
-                    <blockquote class="blockquote">
-                        <p>"Chidon Kitchen has the best kitchen tools I've ever used. The quality is unmatched, and their customer service is fantastic. My kitchen has never been more complete!"</p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                        A Happy Chef
-                    </figcaption>
-                </div>
-            </div>
-        </section>
     </main>
+    
+    <section class="why-choose-us text-center">
+        <div class="container">
+            <h2 class="mb-5">Why Choose Chidon Kitchen?</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <i data-feather="award" class="mb-3"></i>
+                    <h3>Unmatched Quality</h3>
+                    <p>We source the finest materials to create durable, long-lasting kitchen tools.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <i data-feather="truck" class="mb-3"></i>
+                    <h3>Fast, Reliable Shipping</h3>
+                    <p>Your new kitchen essentials will be at your door before you know it.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <i data-feather="smile" class="mb-3"></i>
+                    <h3>Satisfaction Guaranteed</h3>
+                    <p>We stand behind our products. If you're not happy, we're not happy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
     <footer class="text-white text-center">
         <div class="container">
-            <p>&copy; 2025 Chidon Kitchen. All Rights Reserved.</p>
-            <div class="social-icons">
-                <a href="#" class="text-white me-3"><i data-feather="facebook"></i></a>
-                <a href="#" class="text-white me-3"><i data-feather="instagram"></i></a>
-                <a href="#" class="text-white"><i data-feather="twitter"></i></a>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Chidon Kitchen</h5>
+                    <p>Crafting quality tools to inspire culinary creativity in every home.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Stay Connected</h5>
+                    <p>Subscribe to our newsletter for the latest arrivals and special offers.</p>
+                    <form class="d-flex justify-content-center">
+                        <input type="email" class="form-control me-2" placeholder="Enter your email">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-3"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-white"><i data-feather="twitter"></i></a>
+                    </div>
+                </div>
             </div>
+            <hr class="my-4">
+            <p>&copy; 2025 Chidon Kitchen. All Rights Reserved.</p>
         </div>
     </footer>
     
     <nav class="navbar navbar-expand-lg bottom-nav d-lg-none">
         <div class="container">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">
-                        <i data-feather="home"></i>
-                        <span class="d-lg-none">Home</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="shop.html">
-                        <i data-feather="shopping-cart"></i>
-                        <span class="d-lg-none">Shop</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">
-                        <i data-feather="info"></i>
-                        <span class="d-lg-none">About</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">
-                        <i data-feather="mail"></i>
-                        <span class="d-lg-none">Contact</span>
-                    </a>
-                </li>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html"><i data-feather="home"></i><span>Home</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html"><i data-feather="shopping-cart"></i><span>Shop</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html"><i data-feather="info"></i><span>About</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html"><i data-feather="mail"></i><span>Contact</span></a></li>
             </ul>
         </div>
     </nav>
