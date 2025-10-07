@@ -9,10 +9,15 @@
     z-index: 1030;
 }
 
-.bottom-nav .navbar-nav {
+/* New custom class for bottom navigation items */
+.bottom-nav-items {
     display: flex;
+    flex-direction: row; /* Lay out items horizontally */
     justify-content: space-around;
     width: 100%;
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0; /* Remove default padding */
+    margin-bottom: 0;
 }
 
 .bottom-nav .nav-item {
