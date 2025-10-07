@@ -1,70 +1,132 @@
-/* Mobile-specific styles */
+/* --- CHIDON KITCHEN: MOBILE STYLESHEET --- */
+
+/*
+  This file contains overrides for screens typically smaller than 992px.
+*/
+
+/* General Adjustments for smaller screens */
+@media (max-width: 991.98px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .section-padding { padding: 60px 0; }
+
+    .hero-section {
+        padding: 80px 0;
+    }
+    .hero-section h1 {
+        font-size: 2.75rem;
+    }
+}
+
+/* Tablet and Mobile adjustments */
+@media (max-width: 767.98px) {
+    h1 { font-size: 2.25rem; }
+    .hero-section h1 { font-size: 2.5rem; }
+    .hero-section .lead { font-size: 1.1rem; }
+
+    /* Make main header nav toggleable */
+    .navbar-nav {
+        display: none; /* Hide desktop nav links by default */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--white-color);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 10px 10px -5px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+    }
+
+    .navbar-nav.is-active {
+        display: flex; /* Show when toggled */
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem;
+        border-bottom: none;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary-accent);
+      background-color: var(--subtle-accent-bg);
+    }
+
+    .mobile-nav-toggle {
+        display: block; /* Show the hamburger icon */
+        font-size: 1.5rem;
+    }
+
+    .main-header .navbar {
+        position: relative; /* Needed for absolute positioning of nav */
+    }
+
+    /* Hide desktop nav, show mobile bottom nav */
+    .main-header .navbar-nav { display: none; } /* Ensure it's hidden */
+
+    /* Footer adjustments */
+    .main-footer .container {
+        gap: 2.5rem;
+    }
+    .footer-column {
+      text-align: center;
+    }
+    .social-icons {
+      justify-content: center;
+    }
+}
+
+/* Bottom Navigation Bar for Mobile */
 .bottom-nav {
-    background-color: #ffffff;
-    border-top: 1px solid #e0e0e0;
-    padding: 0.5rem 0;
+    display: none; /* Hidden by default */
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
-    z-index: 1030;
+    background-color: var(--white-color);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 1020;
+    border-top: 1px solid var(--border-color);
 }
 
-/* New custom class for bottom navigation items */
-.bottom-nav-items {
+@media (max-width: 767.98px) {
+    .bottom-nav {
+        display: block; /* Show on mobile */
+    }
+
+    body {
+        /* Add padding to the bottom of the body to prevent content from being hidden */
+        padding-bottom: 70px; 
+    }
+}
+
+.bottom-nav__list {
     display: flex;
-    flex-direction: row; /* Lay out items horizontally */
     justify-content: space-around;
-    width: 100%;
-    list-style: none; /* Remove default bullet points */
-    padding-left: 0; /* Remove default padding */
-    margin-bottom: 0;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
 }
 
-.bottom-nav .nav-item {
-    text-align: center;
-}
-
-.bottom-nav .nav-link {
+.bottom-nav__item a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.75rem; /* Smaller font size */
-    color: #2c3e50; /* Dark slate blue/grey */
-    padding: 0.25rem 0;
+    justify-content: center;
+    color: #666;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    gap: 4px;
+    transition: color var(--transition-speed);
 }
 
-.bottom-nav .nav-link.active,
-.bottom-nav .nav-link:hover {
-    color: #c89f68; /* Brownish-gold */
+.bottom-nav__item a .feather {
+    width: 24px;
+    height: 24px;
 }
 
-.bottom-nav .nav-link i {
-    font-size: 1.5rem; /* Larger icons */
-    margin-bottom: 4px;
-}
-
-/* Adjustments for main content to not be hidden by the bottom nav */
-body {
-    padding-bottom: 80px; /* Height of the bottom nav */
-}
-
-/* Make hero section more impactful on mobile */
-.hero-section {
-    padding: 100px 0;
-}
-
-.hero-section h1 {
-    font-size: 2.5rem;
-}
-
-/* Adjust padding for sections */
-main.container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-/* Ensure carousel images in About page are responsive */
-#storeCarousel .carousel-item img {
-    height: 250px;
-    object-fit: cover;
+.bottom-nav__item a.active,
+.bottom-nav__item a:hover {
+    color: var(--primary-accent);
 }
