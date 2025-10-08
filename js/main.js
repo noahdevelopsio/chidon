@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbarMenu = document.getElementById('navbar-menu');
     if (mobileNavToggle && navbarMenu) {
         mobileNavToggle.addEventListener('click', () => {
-            navbarMenu.classList.toggle('is-active');
+            navbarMenu.classList.toggle('is-open'); // CORRECTED: Was 'is-active'
             // Change icon to 'x' when menu is open
             const icon = mobileNavToggle.querySelector('i');
-            if (navbarMenu.classList.contains('is-active')) {
+            if (navbarMenu.classList.contains('is-open')) { // CORRECTED: Was 'is-active'
                 icon.setAttribute('data-feather', 'x');
             } else {
                 icon.setAttribute('data-feather', 'menu');
@@ -51,18 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 5. Active Nav Link Highlighter
-    const navLinks = document.querySelectorAll('.nav-link, .bottom-nav__item a');
+    const navLinks = document.querySelectorAll('.main-nav__link, .bottom-nav__item a'); // CORRECTED: Was '.nav-link'
     const currentPage = window.location.pathname.split('/').pop();
     
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href').split('/').pop();
-        // Use a simple check for home page, otherwise check if path includes link
+        
+        // Remove active class from all links first
+        link.classList.remove('active');
+
+        // Add active class to the matching link
         if ((currentPage === '' || currentPage === 'index.html') && linkPage === 'index.html') {
             link.classList.add('active');
         } else if (linkPage !== 'index.html' && window.location.pathname.includes(link.getAttribute('href'))) {
              link.classList.add('active');
-        } else {
-             link.classList.remove('active');
         }
     });
 });

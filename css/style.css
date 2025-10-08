@@ -226,7 +226,7 @@ textarea.form-control {
     z-index: 1000;
 }
 
-.main-navbar {
+.main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -234,14 +234,14 @@ textarea.form-control {
     position: relative; /* Needed for absolute positioning of mobile nav */
 }
 
-.navbar-brand {
+.main-nav__brand {
     font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--heading-color);
 }
 
-.navbar-nav {
+.main-nav__menu {
     list-style: none;
     display: flex;
     gap: 2rem;
@@ -249,21 +249,21 @@ textarea.form-control {
     padding: 0;
 }
 
-.nav-link {
+.main-nav__link {
     font-weight: 600;
     color: var(--body-text-color);
     padding-bottom: 0.5rem;
     border-bottom: 2px solid transparent;
 }
 
-.nav-link.active,
-.nav-link:hover {
+.main-nav__link.active,
+.main-nav__link:hover {
     color: var(--primary-accent);
     border-bottom-color: var(--primary-accent);
     text-decoration: none;
 }
 
-.mobile-nav-toggle {
+.main-nav__toggle {
     display: none; /* Hidden on desktop */
     background: none;
     border: none;
