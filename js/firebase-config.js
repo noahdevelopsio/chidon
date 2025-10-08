@@ -1,10 +1,9 @@
-// -----------------------------------------------------
-// FIREBASE CONFIGURATION
-// -----------------------------------------------------
-// 1. Go to your Firebase project console.
-// 2. In the project settings, find your web app's configuration object.
-// 3. Copy the object and paste it here.
-// IMPORTANT: Replace the placeholder values with your actual Firebase project configuration.
+// --- CHIDON KITCHEN: FIREBASE CONFIGURATION --- //
+
+// This file contains the Firebase project configuration.
+// TODO: Replace the placeholder values below with your actual Firebase project settings.
+// You can find these details in your Firebase project console:
+// Project Settings > General > Your apps > Firebase SDK snippet > Config
 
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
@@ -15,5 +14,5 @@ const firebaseConfig = {
   appId: "YOUR_APP_ID"
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// Export the configuration object to be used by other scripts
+export default firebaseConfig;
