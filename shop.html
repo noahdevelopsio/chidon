@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Shop All Products - Chidon Kitchen</title>
-    <meta name="description" content="Browse our collection of high-quality cookware, cutlery, utensils, and more. Order your favorite kitchen tools directly via WhatsApp.">
+    <title>Shop - Chidon Kitchen</title>
+    <meta name="description" content="Browse our full collection of kitchenware, from essential tools to specialty gadgets. High-quality products to elevate your cooking.">
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Open Graph, Twitter, Favicon meta tags should be included here similar to index.html -->
-
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
 
+    <!-- Feather Icons -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
 <body>
 
-    <!-- ====== Header Section ====== -->
     <header class="main-header">
         <div class="container">
-            <nav class="navbar">
+            <nav class="main-navbar">
                 <a href="index.html" class="navbar-brand">Chidon Kitchen</a>
                 <ul class="navbar-nav" id="navbar-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
@@ -34,95 +38,67 @@
         </div>
     </header>
 
-    <main class="section-padding">
-        <div class="container">
-            <div class="text-center">
-                <h1>All Products</h1>
-                <p class="lead">Find the perfect tools to inspire your next culinary creation.</p>
+    <main>
+        <section class="section-padding section-bg">
+            <div class="container text-center">
+                <h1 class="fade-in">All Products</h1>
+                <p class="lead fade-in">Find the perfect tools for your kitchen.</p>
             </div>
+        </section>
 
-            <!-- ====== Shop Controls ====== -->
-            <div id="shop-controls" class="mt-2">
-                <div class="search-wrapper">
-                    <i class="feather-search" data-feather="search"></i>
-                    <input type="text" id="search-bar" class="form-control" placeholder="Search by product name..." aria-label="Search by product name">
+        <section class="section-padding">
+            <div class="container">
+                <div class="shop-filters fade-in">
+                    <!-- Category filters will be dynamically loaded here by main.js -->
+                    <button class="btn btn-secondary active" data-category="all">All</button>
                 </div>
-                <select id="category-filter" class="form-control" aria-label="Filter by category">
-                    <option value="all">All Categories</option>
-                    <!-- Categories will be populated dynamically -->
-                </select>
-            </div>
-
-            <!-- ====== Product Grid ====== -->
-            <div id="product-grid" aria-live="polite">
-                <!-- Products will be dynamically loaded here -->
-                <div id="loading-spinner" style="display: none; grid-column: 1 / -1; text-align: center; padding: 4rem;">
-                    <i data-feather="loader" class="spin" style="width: 48px; height: 48px;"></i>
-                    <p>Loading Products...</p>
+                <div id="product-grid" class="grid-4 fade-in">
+                    <!-- Products will be dynamically loaded here by main.js -->
                 </div>
-                <div id="no-results-message" style="display: none;"></div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- ====== Footer Section ====== -->
     <footer class="main-footer">
-        <div class="container">
-            <div class="footer-column">
-                <h5>Chidon Kitchen</h5>
-                <p>Crafting tools to inspire culinary creativity in every home.</p>
+        <div class="container text-center">
+            <div class="social-icons">
+                <!-- TODO: Add your social media links -->
+                <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
             </div>
-            <div class="footer-column">
-                <h5>Quick Links</h5>
-                <ul style="list-style: none;">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h5>Follow Us</h5>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; <span id="current-year"></span> Chidon Kitchen. All Rights Reserved.
+            <p>&copy; <span id="current-year"></span> Chidon Kitchen. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- ====== Mobile Bottom Navigation ====== -->
     <nav class="bottom-nav">
-        <ul class="bottom-nav__list">
-            <li class="bottom-nav__item"><a href="index.html" aria-label="Home"><i data-feather="home"></i><span>Home</span></a></li>
-            <li class="bottom-nav__item"><a href="shop.html" class="active" aria-label="Shop"><i data-feather="shopping-bag"></i><span>Shop</span></a></li>
-            <li class="bottom-nav__item"><a href="about.html" aria-label="About Us"><i data-feather="users"></i><span>About</span></a></li>
-            <li class="bottom-nav__item"><a href="contact.html" aria-label="Contact"><i data-feather="mail"></i><span>Contact</span></a></li>
-        </ul>
+        <div class="bottom-nav__item">
+            <a href="index.html" class="bottom-nav__link">
+                <i data-feather="home"></i>
+                <span>Home</span>
+            </a>
+        </div>
+        <div class="bottom-nav__item">
+            <a href="shop.html" class="bottom-nav__link active">
+                <i data-feather="shopping-bag"></i>
+                <span>Shop</span>
+            </a>
+        </div>
+        <div class="bottom-nav__item">
+            <a href="about.html" class="bottom-nav__link">
+                <i data-feather="info"></i>
+                <span>About</span>
+            </a>
+        </div>
+        <div class="bottom-nav__item">
+            <a href="contact.html" class="bottom-nav__link">
+                <i data-feather="mail"></i>
+                <span>Contact</span>
+            </a>
+        </div>
     </nav>
 
-    <!-- Firebase SDK (Modular) -->
-    <!-- This is the recommended approach. Ensure firebase-config.js uses `export default` -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
-        import firebaseConfig from './js/firebase-config.js';
-        import { initShop } from './js/shop.js';
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        // Pass the Firestore instance to the shop module
-        initShop(db);
-    </script>
-
-    <!-- JavaScript -->
+    <!-- Custom JS -->
     <script src="js/main.js"></script>
-
 </body>
 </html>

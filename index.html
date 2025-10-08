@@ -4,26 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Chidon Kitchen - Tools for Every Kitchen</title>
-    <meta name="description" content="High-quality, durable, and beautiful kitchen tools to inspire culinary creativity in every home.">
+    <title>Chidon Kitchen - Quality Kitchenware for Every Home</title>
+    <meta name="description" content="Discover a wide range of high-quality kitchen tools, gadgets, and essentials at Chidon Kitchen. Shop now for the best deals on everything you need for your culinary adventures.">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://YOUR_WEBSITE_URL.com/"> <!-- TODO: Change this URL -->
-    <meta property="og:title" content="Chidon Kitchen - Tools for Every Kitchen">
-    <meta property="og:description" content="Discover high-quality tools that elevate your cooking experience.">
-    <meta property="og:image" content="https://YOUR_WEBSITE_URL.com/images/og-image.jpg"> <!-- TODO: Change this image URL -->
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://YOUR_WEBSITE_URL.com/"> <!-- TODO: Change this URL -->
-    <meta property="twitter:title" content="Chidon Kitchen - Tools for Every Kitchen">
-    <meta property="twitter:description" content="Discover high-quality tools that elevate your cooking experience.">
-    <meta property="twitter:image" content="https://YOUR_WEBSITE_URL.com/images/og-image.jpg"> <!-- TODO: Change this image URL -->
-
-    <link rel="icon" href="images/favicon.ico"> <!-- TODO: Add your favicon -->
-
-    <!-- Stylesheets -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
 
@@ -32,10 +21,9 @@
 </head>
 <body>
 
-    <!-- ====== Header Section ====== -->
     <header class="main-header">
         <div class="container">
-            <nav class="navbar">
+            <nav class="main-navbar">
                 <a href="index.html" class="navbar-brand">Chidon Kitchen</a>
                 <ul class="navbar-nav" id="navbar-menu">
                     <li><a href="index.html" class="nav-link active">Home</a></li>
@@ -51,116 +39,94 @@
     </header>
 
     <main>
-        <!-- ====== Hero Section ====== -->
-        <section class="hero-section">
-            <div class="container fade-in">
-                <h1>Tools for Every Kitchen</h1>
-                <p class="lead">High-quality, durable, and beautiful essentials designed to elevate your cooking experience.</p>
-                <a href="shop.html" class="btn btn-primary mt-2">Shop Now</a>
+        <section class="hero-section text-center">
+            <div class="container">
+                <h1 class="fade-in">Your Culinary Adventure Starts Here</h1>
+                <p class="lead fade-in">The best tools for the heart of your home.</p>
+                <a href="shop.html" class="btn btn-primary fade-in">Shop All Products</a>
             </div>
         </section>
 
-        <!-- ====== Featured Categories Section ====== -->
         <section class="section-padding">
-            <div class="container">
-                <h2 class="text-center mb-2">Shop by Category</h2>
-                <div id="product-grid" class="mt-2">
-                    <!-- These would ideally be generated from featured categories in a CMS -->
-                    <a href="shop.html?category=Cookware" class="product-card fade-in" style="text-decoration: none; color: inherit;">
-                        <div class="product-card__body text-center">
-                            <i data-feather="coffee" style="width: 48px; height: 48px; margin-bottom: 1rem; color: var(--primary-accent);"></i>
-                            <h3 class="product-card__title">Cookware</h3>
-                        </div>
-                    </a>
-                     <a href="shop.html?category=Cutlery" class="product-card fade-in" style="text-decoration: none; color: inherit;">
-                        <div class="product-card__body text-center">
-                            <i data-feather="scissors" style="width: 48px; height: 48px; margin-bottom: 1rem; color: var(--primary-accent);"></i>
-                            <h3 class="product-card__title">Cutlery</h3>
-                        </div>
-                    </a>
-                     <a href="shop.html?category=Utensils" class="product-card fade-in" style="text-decoration: none; color: inherit;">
-                        <div class="product-card__body text-center">
-                            <i data-feather="tool" style="width: 48px; height: 48px; margin-bottom: 1rem; color: var(--primary-accent);"></i>
-                            <h3 class="product-card__title">Utensils</h3>
-                        </div>
-                    </a>
+            <div class="container text-center">
+                <h2 class="fade-in">Why Chidon Kitchen?</h2>
+                <p class="lead fade-in">We provide tools that inspire creativity and last a lifetime.</p>
+                <div class="grid-3" style="margin-top: 4rem;">
+                    <div class="feature-card fade-in">
+                        <i data-feather="award" style="width: 48px; height: 48px;"></i>
+                        <h3>Quality Craftsmanship</h3>
+                        <p>Every item is selected for its durability, performance, and design.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <i data-feather="truck" style="width: 48px; height: 48px;"></i>
+                        <h3>Fast Shipping</h3>
+                        <p>We ship your order within 24 hours, so you can start cooking sooner.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <i data-feather="smile" style="width: 48px; height: 48px;"></i>
+                        <h3>Happy Customers</h3>
+                        <p>We're proud of our 5-star rating and our friendly customer support.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ====== Brand Story Section ====== -->
         <section class="section-padding section-bg">
             <div class="container">
-                <div style="max-width: 700px; margin: auto; text-align: center;">
-                    <h2 class="mb-1">Made for Connection</h2>
-                    <p>Chidon Kitchen started with a simple idea: to bring high-quality, durable, and beautiful kitchen tools to families everywhere. We believe that the kitchen is the heart of the home, a place for creation, connection, and joy. Our mission is to provide the tools that make that experience even more special.</p>
-                    <a href="about.html" class="btn btn-outline mt-2">Our Story</a>
+                <div class="text-center">
+                    <h2 class="fade-in">Featured Products</h2>
+                    <p class="fade-in">A few of our customer favorites.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- ====== Visit Our Store Section ====== -->
-        <section class="section-padding">
-            <div class="container">
-                <h2 class="text-center mb-2">Visit Our Store</h2>
-                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; align-items: center;">
-                    <div class="map-container fade-in">
-                        <!-- TODO: Replace with your Google Maps embed code -->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086228141335!2d144.9537353159042!3d-37.81720997975164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1678886688888!5m2!1sen!2sus" 
-                                width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="text-center">
-                        <p><strong>Address:</strong> 123 Culinary Lane, Melbourne, VIC 3000</p>
-                        <p><strong>Hours:</strong> Mon-Fri: 9am - 5:30pm | Sat: 10am - 4pm</p>
-                        <a href="contact.html" class="btn btn-primary mt-1">Get Directions</a>
-                    </div>
+                <div id="featured-products" class="grid-4" style="margin-top: 4rem;">
+                    <!-- Products will be dynamically loaded here by main.js -->
+                </div>
+                <div class="text-center" style="margin-top: 3rem;">
+                    <a href="shop.html" class="btn btn-secondary fade-in">View All Products</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ====== Footer Section ====== -->
     <footer class="main-footer">
-        <div class="container">
-            <div class="footer-column">
-                <h5>Chidon Kitchen</h5>
-                <p>Crafting tools to inspire culinary creativity in every home.</p>
+        <div class="container text-center">
+            <div class="social-icons">
+                <!-- TODO: Add your social media links -->
+                <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
             </div>
-            <div class="footer-column">
-                <h5>Quick Links</h5>
-                <ul style="list-style: none;">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h5>Follow Us</h5>
-                <div class="social-icons">
-                    <!-- TODO: Replace with your actual social media links -->
-                    <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; <span id="current-year"></span> Chidon Kitchen. All Rights Reserved.
+            <p>&copy; <span id="current-year"></span> Chidon Kitchen. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- ====== Mobile Bottom Navigation ====== -->
     <nav class="bottom-nav">
-        <ul class="bottom-nav__list">
-            <li class="bottom-nav__item"><a href="index.html" class="active" aria-label="Home"><i data-feather="home"></i><span>Home</span></a></li>
-            <li class="bottom-nav__item"><a href="shop.html" aria-label="Shop"><i data-feather="shopping-bag"></i><span>Shop</span></a></li>
-            <li class="bottom-nav__item"><a href="about.html" aria-label="About Us"><i data-feather="users"></i><span>About</span></a></li>
-            <li class="bottom-nav__item"><a href="contact.html" aria-label="Contact"><i data-feather="mail"></i><span>Contact</span></a></li>
-        </ul>
+        <div class="bottom-nav__item">
+            <a href="index.html" class="bottom-nav__link active">
+                <i data-feather="home"></i>
+                <span>Home</span>
+            </a>
+        </div>
+        <div class="bottom-nav__item">
+            <a href="shop.html" class="bottom-nav__link">
+                <i data-feather="shopping-bag"></i>
+                <span>Shop</span>
+            </a>
+        </div>
+        <div class="bottom-nav__item">
+            <a href="about.html" class="bottom-nav__link">
+                <i data-feather="info"></i>
+                <span>About</span>
+            </a>
+        </div>
+        <div class="bottom-nav__item">
+            <a href="contact.html" class="bottom-nav__link">
+                <i data-feather="mail"></i>
+                <span>Contact</span>
+            </a>
+        </div>
     </nav>
 
-    <!-- JavaScript -->
+    <!-- Custom JS -->
     <script src="js/main.js"></script>
 
 </body>

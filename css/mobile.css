@@ -1,132 +1,120 @@
-/* --- CHIDON KITCHEN: MOBILE STYLESHEET --- */
-
-/*
-  This file contains overrides for screens typically smaller than 992px.
+/* 
+================================================
+RESPONSIVE STYLES (Mobile First Approach)
+================================================
 */
 
-/* General Adjustments for smaller screens */
-@media (max-width: 991.98px) {
+/* 
+================================================
+1. General Mobile Styles (up to 768px)
+================================================
+*/
+@media (max-width: 768px) {
+
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
-    .section-padding { padding: 60px 0; }
 
-    .hero-section {
-        padding: 80px 0;
+    .section-padding {
+        padding: 60px 0;
     }
-    .hero-section h1 {
-        font-size: 2.75rem;
+
+    /* Grid stacks to single column on mobile */
+    .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
     }
-}
 
-/* Tablet and Mobile adjustments */
-@media (max-width: 767.98px) {
-    h1 { font-size: 2.25rem; }
-    .hero-section h1 { font-size: 2.5rem; }
-    .hero-section .lead { font-size: 1.1rem; }
+    /* 
+    ================================================
+    2. Mobile Header & Navigation (up to 768px)
+    ================================================
+    */
 
-    /* Make main header nav toggleable */
-    .navbar-nav {
-        display: none; /* Hide desktop nav links by default */
+    .main-navbar .navbar-nav {
+        display: none; /* Hide the nav links by default */
         flex-direction: column;
         width: 100%;
-        text-align: center;
-        background-color: var(--white-color);
         position: absolute;
         top: 100%;
         left: 0;
-        box-shadow: 0 10px 10px -5px rgba(0,0,0,0.1);
-        padding: 1rem 0;
+        background-color: var(--white-color);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        border-top: 1px solid var(--border-color);
+        gap: 0; /* Reset gap for vertical layout */
     }
 
-    .navbar-nav.is-active {
+    .navbar-menu.is-open {
         display: flex; /* Show when toggled */
     }
 
     .nav-link {
-        padding: 0.75rem 1rem;
-        border-bottom: none;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+        text-align: left;
     }
-    .nav-link:hover, .nav-link.active {
-      color: var(--primary-accent);
-      background-color: var(--subtle-accent-bg);
+    .nav-link:hover,
+    .nav-link.active {
+        border-bottom-color: var(--border-color); /* Maintain border */
     }
 
     .mobile-nav-toggle {
-        display: block; /* Show the hamburger icon */
-        font-size: 1.5rem;
+        display: block; /* Show the hamburger menu */
     }
 
-    .main-header .navbar {
-        position: relative; /* Needed for absolute positioning of nav */
-    }
-
-    /* Hide desktop nav, show mobile bottom nav */
-    .main-header .navbar-nav { display: none; } /* Ensure it's hidden */
-
-    /* Footer adjustments */
-    .main-footer .container {
-        gap: 2.5rem;
-    }
-    .footer-column {
-      text-align: center;
-    }
-    .social-icons {
-      justify-content: center;
-    }
-}
-
-/* Bottom Navigation Bar for Mobile */
-.bottom-nav {
-    display: none; /* Hidden by default */
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--white-color);
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
-    z-index: 1020;
-    border-top: 1px solid var(--border-color);
-}
-
-@media (max-width: 767.98px) {
-    .bottom-nav {
-        display: block; /* Show on mobile */
-    }
-
+    /* Hide main header and footer on smaller screens, replaced by bottom nav */
     body {
-        /* Add padding to the bottom of the body to prevent content from being hidden */
-        padding-bottom: 70px; 
+        padding-bottom: 60px; /* Space for the bottom nav */
     }
-}
+    .main-footer {
+        display: none;
+    }
 
-.bottom-nav__list {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0.5rem 0;
-}
+    /* 
+    ================================================
+    3. Bottom Navigation Bar (up to 768px)
+    ================================================
+    */
+    .bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background-color: var(--white-color);
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.08);
+        z-index: 1000;
+    }
 
-.bottom-nav__item a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.7rem;
-    font-weight: 500;
-    gap: 4px;
-    transition: color var(--transition-speed);
-}
+    .bottom-nav__item {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.bottom-nav__item a .feather {
-    width: 24px;
-    height: 24px;
-}
+    .bottom-nav__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #999;
+        padding: 8px 0;
+        width: 100%;
+        height: 100%;
+    }
+    .bottom-nav__link:hover {
+        color: var(--body-text-color);
+        text-decoration: none;
+    }
 
-.bottom-nav__item a.active,
-.bottom-nav__item a:hover {
-    color: var(--primary-accent);
+    .bottom-nav__link.active {
+        color: var(--primary-accent);
+    }
+
+    .bottom-nav__link span {
+        font-size: 0.75rem;
+        margin-top: 2px;
+    }
 }
