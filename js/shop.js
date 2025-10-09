@@ -9,7 +9,7 @@
  */
 export function initShop(db) {
     // TODO: Replace with your WhatsApp number
-    const WHATSAPP_NUMBER = "1234567890"; // Use your country code, no '+' or spaces
+    const WHATSAPP_NUMBER = "+2348137616290"; // Use your country code, no '+' or spaces
 
     const productGrid = document.getElementById('product-grid');
     const searchBar = document.getElementById('search-bar');

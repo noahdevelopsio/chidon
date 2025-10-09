@@ -6,12 +6,12 @@
 // Project Settings > General > Your apps > Firebase SDK snippet > Config
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBlIYNznti_Gnwkp-Rl90LC1V-Nf8At3Y4",
+  authDomain: "chidon-kitchen.firebaseapp.com",
+  projectId: "chidon-kitchen",
+  storageBucket: "chidon-kitchen.firebasestorage.app",
+  messagingSenderId: "79436407271",
+  appId: "1:79436407271:web:e2d43e1bb60b3d2c0c5d42"
 };
 
 // Export the configuration object to be used by other scripts

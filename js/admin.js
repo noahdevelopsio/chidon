@@ -15,8 +15,8 @@ export function initAdmin(auth, db, firebaseAuthFns) {
     // TODO: Replace these with your Cloudinary details.
     // Find these in your Cloudinary dashboard -> Settings -> Upload.
     // Create an "unsigned" upload preset.
-    const CLOUDINARY_CLOUD_NAME = "YOUR_CLOUD_NAME";
-    const CLOUDINARY_UPLOAD_PRESET = "YOUR_UNSIGNED_UPLOAD_PRESET";
+    const CLOUDINARY_CLOUD_NAME = "df2nojiq2";
+    const CLOUDINARY_UPLOAD_PRESET = "Chidon-kitchen";
     // --- END: Cloudinary Configuration --- //
 
     // Import Firestore functions dynamically
