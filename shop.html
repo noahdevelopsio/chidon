@@ -31,6 +31,9 @@
                     <li><a href="about.html" class="main-nav__link">About</a></li>
                     <li><a href="contact.html" class="main-nav__link">Contact</a></li>
                 </ul>
+                <button class="main-nav__toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
+                    <i data-feather="menu"></i>
+                </button>
             </nav>
         </div>
     </header>
@@ -45,12 +48,24 @@
 
         <section class="section-padding">
             <div class="container">
-                <div class="shop-filters fade-in">
-                    <!-- Category filters will be dynamically loaded here by main.js -->
-                    <button class="btn btn-secondary active" data-category="all">All</button>
+                <!-- Search and Filter Controls -->
+                <div class="shop-controls fade-in">
+                    <div class="search-wrapper">
+                        <input type="text" id="search-bar" class="form-control" placeholder="Search for products...">
+                    </div>
+                    <div class="shop-filters">
+                        <!-- Category filters will be dynamically loaded here by shop.js -->
+                        <button class="btn btn-secondary active" data-category="all">All</button>
+                    </div>
                 </div>
-                <div id="product-grid" class="grid-4 fade-in">
-                    <!-- Products will be dynamically loaded here by main.js -->
+
+                <div id="product-grid" class="grid-4 fade-in" style="margin-top: 2rem;">
+                    <!-- Products will be dynamically loaded here by shop.js -->
+                </div>
+                
+                <div id="no-results-message" class="text-center" style="display: none; margin-top: 2rem;">
+                    <h3>No products found</h3>
+                    <p>Try adjusting your search or filter.</p>
                 </div>
             </div>
         </section>
@@ -58,13 +73,10 @@
 
     <footer class="main-footer">
         <div class="container text-center">
-            <div class="social-icons">
-                <!-- TODO: Add your social media links -->
-                <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
-                <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+            <div class="social-icons" id="social-icons">
+                <!-- Social Icons will be dynamically loaded by ui.js -->
             </div>
-            <p>&copy; <span id="current-year"></span> Chidon Kitchen. All Rights Reserved.</p>
+            <p>&copy; <span id="current-year"></span> <span id="site-name"></span>. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -95,7 +107,17 @@
         </div>
     </nav>
 
-    <!-- Custom JS -->
+    <!-- Firebase SDK (using compat libraries for easier integration with existing code) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Project Scripts -->
+    <script src="js/firebase-secrets.js"></script> 
+    <script src="js/config.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/shop.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 </html>
