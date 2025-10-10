@@ -1,5 +1,4 @@
-
-/* 
+/*
 ================================================
 TABLE OF CONTENTS
 ================================================
@@ -13,35 +12,35 @@ TABLE OF CONTENTS
 ================================================
 */
 
-/* 
+/*
 ================================================
 1. Root & Body
 ================================================
 */
 :root {
     /* Colors */
-    --primary-accent: #007bff; /* A vibrant blue for links, buttons, and highlights */
-    --primary-accent-darker: #0056b3;
-    --heading-color: #1a1a1a; /* Dark grey for headings for strong contrast */
-    --body-text-color: #555; /* A slightly lighter grey for body text */
-    --subtle-accent-bg: #f8f9fa; /* A very light grey for backgrounds like hero sections */
+    --primary-accent: #FFA94D; /* Warm orange accent */
+    --primary-accent-darker: #e69342;
+    --heading-color: #444; /* Dark grey for headings */
+    --body-text-color: #444; /* Dark grey for body text */
+    --subtle-accent-bg: #f9f9f9; /* Light grey for backgrounds */
     --white-color: #fff;
-    --border-color: #dee2e6;
+    --border-color: #e0e0e0;
     --danger-color: #dc3545;
     --success-color: #28a745;
-    
+
     /* Typography */
-    --font-heading: 'Poppins', sans-serif;
-    --font-body: 'Roboto', sans-serif;
+    --font-heading: 'Lora', serif;
+    --font-body: 'Poppins', sans-serif;
 
     /* Spacing & Sizing */
     --section-padding: 80px;
     --container-width: 1200px;
-    --border-radius: 8px;
+    --border-radius: 12px;
 
     /* Shadows */
     --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    --card-shadow-hover: 0 6px 16px rgba(0,0,0,0.12);
+    --card-shadow-hover: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 body {
@@ -56,7 +55,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* 
+/*
 ================================================
 2. Generic & Helper Classes
 ================================================
@@ -186,7 +185,7 @@ img {
 .form-control:focus {
     border-color: var(--primary-accent);
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(255, 169, 77, 0.25);
 }
 
 textarea.form-control {
@@ -212,7 +211,127 @@ textarea.form-control {
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
-/* 
+/* Cart Modal */
+.cart-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: var(--white-color);
+    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+    overflow-y: auto;
+}
+.cart-modal.open {
+    transform: translateX(0);
+}
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+}
+.cart-overlay.show {
+    display: block;
+}
+.cart-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-items {
+    padding: 1.5rem;
+}
+.cart-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.cart-item-details {
+    flex: 1;
+}
+.cart-item-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.cart-item-price {
+    color: var(--primary-accent);
+    font-weight: 600;
+}
+.cart-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.cart-item-qty input {
+    width: 60px;
+    text-align: center;
+}
+.cart-item-remove {
+    color: var(--danger-color);
+    cursor: pointer;
+}
+.cart-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Google Maps */
+.map-container {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+/* Carousel */
+.carousel {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+/* Testimonial */
+.testimonial {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    text-align: center;
+}
+.testimonial-quote {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+.testimonial-author {
+    font-weight: 600;
+    color: var(--primary-accent);
+}
+
+/*
 ================================================
 3. Header & Navigation
 ================================================
@@ -231,7 +350,7 @@ textarea.form-control {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    position: relative; /* Needed for absolute positioning of mobile nav */
+    position: relative;
 }
 
 .main-nav__brand {
@@ -264,14 +383,14 @@ textarea.form-control {
 }
 
 .main-nav__toggle {
-    display: none; /* Hidden on desktop */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
 }
 
-/* 
+/*
 ================================================
 4. Main Content Sections
 ================================================
@@ -293,13 +412,40 @@ textarea.form-control {
 .feature-card {
     text-align: center;
     padding: 2rem;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
 }
 .feature-card i {
     color: var(--primary-accent);
     margin-bottom: 1rem;
 }
 
-/* 
+/* Featured Categories */
+.category-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+.category-card i {
+    color: var(--primary-accent);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/*
 ================================================
 5. Shop Page Specifics
 ================================================
@@ -319,12 +465,20 @@ textarea.form-control {
     transform: translateY(-5px);
     box-shadow: var(--card-shadow-hover);
 }
+.product-card__image-container {
+    position: relative;
+    overflow: hidden;
+}
 .product-card__image {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    transition: transform 0.2s ease;
 }
-.product-card__content {
+.product-card:hover .product-card__image {
+    transform: scale(1.05);
+}
+.product-card__body {
     padding: 1.5rem;
     flex-grow: 1;
     display: flex;
@@ -335,10 +489,11 @@ textarea.form-control {
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
-.product-card__category {
-    color: #888;
+.product-card__description {
+    color: #666;
     font-size: 0.9rem;
     margin-bottom: 1rem;
+    flex-grow: 1;
 }
 .product-card__price {
     font-size: 1.25rem;
@@ -346,19 +501,30 @@ textarea.form-control {
     color: var(--primary-accent);
     margin-top: auto;
 }
-.product-card__footer {
-    padding: 0 1.5rem 1.5rem;
+.product-card__tags {
+    margin-top: 0.5rem;
+}
+.product-card__tag {
+    background-color: var(--subtle-accent-bg);
+    color: var(--body-text-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
 }
 
-/* Shop Filters */
-.shop-filters {
+/* Shop Controls */
+.shop-controls {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
 }
+.search-wrapper {
+    flex: 1;
+    min-width: 200px;
+}
 
-/* 
+/*
 ================================================
 6. Admin Page Specifics
 ================================================
@@ -387,7 +553,7 @@ textarea.form-control {
     gap: 0.5rem;
 }
 
-/* 
+/*
 ================================================
 7. Footer
 ================================================
@@ -414,5 +580,32 @@ textarea.form-control {
 
 /* Bottom Nav (for mobile) */
 .bottom-nav {
-    display: none; /* Hidden on desktop */
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white-color);
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+    z-index: 1000;
+    padding: 0.5rem 0;
+}
+.bottom-nav__item {
+    flex: 1;
+    text-align: center;
+}
+.bottom-nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    color: var(--body-text-color);
+    font-size: 0.8rem;
+}
+.bottom-nav__link.active {
+    color: var(--primary-accent);
+}
+.bottom-nav__link i {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
 }

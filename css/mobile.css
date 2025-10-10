@@ -1,10 +1,10 @@
-/* 
+/*
 ================================================
 RESPONSIVE STYLES (Mobile First Approach)
 ================================================
 */
 
-/* 
+/*
 ================================================
 1. General Mobile Styles (up to 768px)
 ================================================
@@ -23,7 +23,22 @@ RESPONSIVE STYLES (Mobile First Approach)
         grid-template-columns: 1fr;
     }
 
-    /* 
+    /* Cart Modal as Drawer */
+    .cart-modal {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 80vh;
+        transform: translateY(100%);
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+    }
+    .cart-modal.open {
+        transform: translateY(0);
+    }
+
+    /*
     ================================================
     2. Mobile Header & Navigation (up to 768px)
     ================================================
@@ -69,7 +84,7 @@ RESPONSIVE STYLES (Mobile First Approach)
         display: none;
     }
 
-    /* 
+    /*
     ================================================
     3. Bottom Navigation Bar (up to 768px)
     ================================================
@@ -103,6 +118,7 @@ RESPONSIVE STYLES (Mobile First Approach)
         padding: 8px 0;
         width: 100%;
         height: 100%;
+        font-size: 0.8rem;
     }
     .bottom-nav__link:hover {
         color: var(--body-text-color);
@@ -113,8 +129,23 @@ RESPONSIVE STYLES (Mobile First Approach)
         color: var(--primary-accent);
     }
 
+    .bottom-nav__link i {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
     .bottom-nav__link span {
         font-size: 0.75rem;
         margin-top: 2px;
+    }
+}
+
+/*
+================================================
+2. Tablet Styles (769px to 1024px)
+================================================
+*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid-4 {
+        grid-template-columns: repeat(3, 1fr);
     }
 }

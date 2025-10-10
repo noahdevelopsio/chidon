@@ -54,10 +54,12 @@
                         <input type="text" id="search-bar" class="form-control" placeholder="Search for products...">
                     </div>
                     <div class="shop-filters">
-                        <!-- Category filters will be dynamically loaded here by shop.js -->
-                        <button class="btn btn-secondary active" data-category="all">All</button>
+                        <select id="category-filter" class="form-control">
+                            <option value="all">All Categories</option>
+                        </select>
                     </div>
                 </div>
+
 
                 <div id="product-grid" class="grid-4 fade-in" style="margin-top: 2rem;">
                     <!-- Products will be dynamically loaded here by shop.js -->
@@ -74,7 +76,9 @@
     <footer class="main-footer">
         <div class="container text-center">
             <div class="social-icons" id="social-icons">
-                <!-- Social Icons will be dynamically loaded by ui.js -->
+                <a href="https://facebook.com/chidonkitchen" aria-label="Facebook"><i data-feather="facebook"></i></a>
+                <a href="https://instagram.com/chidonkitchen" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                <a href="https://twitter.com/chidonkitchen" aria-label="Twitter"><i data-feather="twitter"></i></a>
             </div>
             <p>&copy; <span id="current-year"></span> <span id="site-name"></span>. All Rights Reserved.</p>
         </div>
