@@ -1,100 +1,98 @@
-{
-  "products": [
-    {
-      "name": "Classic Chef's Knife",
-      "description": "A perfectly balanced 8-inch chef's knife, forged from high-carbon stainless steel. An essential tool for every kitchen.",
-      "price": 89.99,
-      "category": "Cutlery",
-      "featured": true,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/kitchen_knife.jpg"
-    },
-    {
-      "name": "Non-Stick Cast Iron Skillet",
-      "description": "12-inch pre-seasoned cast iron skillet. Provides even heat distribution for a perfect sear every time. Oven safe.",
-      "price": 45.50,
-      "category": "Cookware",
-      "featured": true,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/cast_iron_skillet.jpg"
-    },
-    {
-      "name": "Acacia Wood Cutting Board",
-      "description": "A large, durable cutting board made from beautiful and sustainable acacia wood. Gentle on knives and easy to clean.",
-      "price": 35.00,
-      "category": "Utensils",
-      "featured": false,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/cutting_board.jpg"
-    },
-    {
-      "name": "Stainless Steel Mixing Bowls (Set of 3)",
-      "description": "A set of three nesting mixing bowls (1.5, 3, and 5 quarts) with non-slip silicone bases. Dishwasher safe.",
-      "price": 29.99,
-      "category": "Utensils",
-      "featured": false,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/mixing_bowls.jpg"
-    },
-    {
-      "name": "Glass Food Storage Containers (5-Pack)",
-      "description": "A set of five airtight glass containers with locking lids. Perfect for meal prep, leftovers, and pantry organization.",
-      "price": 39.95,
-      "category": "Storage",
-      "featured": true,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/food_storage_containers.jpg"
-    },
-    {
-      "name": "Silicone & Wood Utensil Set",
-      "description": "12-piece utensil set including spatulas, spoons, and tongs. Heat-resistant silicone heads and eco-friendly wooden handles.",
-      "price": 24.99,
-      "category": "Utensils",
-      "featured": false,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/utensil_set.jpg"
-    },
-    {
-      "name": "Dutch Oven with Lid",
-      "description": "5-quart enameled cast iron Dutch oven. Perfect for slow cooking, braising, and baking. Comes with a tight-fitting lid.",
-      "price": 79.99,
-      "category": "Cookware",
-      "featured": true,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/dutch_oven.jpg"
-    },
-    {
-      "name": "Bamboo Steamer Basket",
-      "description": "10-inch bamboo steamer basket for healthy steaming. Stackable design with two tiers. Natural and eco-friendly.",
-      "price": 19.99,
-      "category": "Cookware",
-      "featured": false,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/bamboo_steamer.jpg"
-    },
-    {
-      "name": "Ceramic Knife Set (3-Piece)",
-      "description": "Set of three ceramic knives: chef's knife, utility knife, and paring knife. Ultra-sharp and lightweight.",
-      "price": 49.99,
-      "category": "Cutlery",
-      "featured": false,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/ceramic_knives.jpg"
-    },
-    {
-      "name": "Silicone Baking Mat",
-      "description": "Non-stick silicone baking mat for cookies, pastries, and more. Reusable and easy to clean. Fits standard baking sheets.",
-      "price": 14.99,
-      "category": "Utensils",
-      "featured": false,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/baking_mat.jpg"
-    },
-    {
-      "name": "Stainless Steel Measuring Cups (Set of 4)",
-      "description": "Set of four stainless steel measuring cups: 1/4 cup, 1/3 cup, 1/2 cup, and 1 cup. Durable and stackable.",
-      "price": 12.99,
-      "category": "Utensils",
-      "featured": false,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/measuring_cups.jpg"
-    },
-    {
-      "name": "Plastic Food Containers (10-Pack)",
-      "description": "Set of ten plastic food containers with snap-on lids. Microwave and dishwasher safe. Various sizes for different needs.",
-      "price": 9.99,
-      "category": "Storage",
-      "featured": false,
-      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/plastic_containers.jpg"
-    }
-  ]
-}
+[
+  {
+    "name": "Non-Stick Frying Pan",
+    "description": "High-quality non-stick frying pan with ergonomic handle. Perfect for eggs, pancakes, and stir-fries. 10-inch diameter.",
+    "price": 29.99,
+    "category": "cookware",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/frying_pan.jpg",
+    "featured": true
+  },
+  {
+    "name": "Stainless Steel Knife Set",
+    "description": "Professional 8-piece knife set with wooden block. Includes chef's knife, paring knife, bread knife, and more.",
+    "price": 89.99,
+    "category": "cutlery",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/knife_set.jpg",
+    "featured": true
+  },
+  {
+    "name": "Glass Storage Containers",
+    "description": "Set of 5 airtight glass containers with bamboo lids. Perfect for meal prep and food storage. Microwave and dishwasher safe.",
+    "price": 34.99,
+    "category": "storage",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/storage_containers.jpg",
+    "featured": false
+  },
+  {
+    "name": "Silicone Spatula Set",
+    "description": "Heat-resistant silicone spatula set in 4 colors. Non-stick, flexible, and easy to clean. Set of 3.",
+    "price": 15.99,
+    "category": "utensils",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/spatula_set.jpg",
+    "featured": true
+  },
+  {
+    "name": "Cast Iron Dutch Oven",
+    "description": "5-quart cast iron Dutch oven with enamel coating. Perfect for slow cooking, baking, and stovetop use.",
+    "price": 79.99,
+    "category": "cookware",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/dutch_oven.jpg",
+    "featured": false
+  },
+  {
+    "name": "Ceramic Knife Sharpener",
+    "description": "Dual-stage ceramic knife sharpener. Easy to use, no oil required. Suitable for all types of knives.",
+    "price": 19.99,
+    "category": "cutlery",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/knife_sharpener.jpg",
+    "featured": false
+  },
+  {
+    "name": "Bamboo Cutting Board",
+    "description": "Large bamboo cutting board, 18x12 inches. Eco-friendly, lightweight, and easy to clean.",
+    "price": 24.99,
+    "category": "utensils",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/cutting_board.jpg",
+    "featured": true
+  },
+  {
+    "name": "Stainless Steel Mixing Bowls",
+    "description": "Set of 3 stainless steel mixing bowls with non-slip bottoms. Nestable for easy storage.",
+    "price": 39.99,
+    "category": "cookware",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/mixing_bowls.jpg",
+    "featured": false
+  },
+  {
+    "name": "Plastic Food Containers",
+    "description": "Set of 12 plastic food containers with lids. Various sizes for different storage needs. BPA-free.",
+    "price": 12.99,
+    "category": "storage",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/food_containers.jpg",
+    "featured": false
+  },
+  {
+    "name": "Wooden Spoon Set",
+    "description": "Set of 4 wooden spoons in different sizes. Natural wood, heat-resistant, and eco-friendly.",
+    "price": 16.99,
+    "category": "utensils",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/wooden_spoons.jpg",
+    "featured": false
+  },
+  {
+    "name": "Measuring Cup Set",
+    "description": "Set of 6 stainless steel measuring cups. Includes 1/4, 1/3, 1/2, 2/3, 3/4, and 1 cup sizes.",
+    "price": 22.99,
+    "category": "utensils",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/measuring_cups.jpg",
+    "featured": false
+  },
+  {
+    "name": "Insulated Water Bottle",
+    "description": "Stainless steel insulated water bottle, 32oz. Keeps drinks cold for 24 hours or hot for 12 hours.",
+    "price": 29.99,
+    "category": "storage",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/water_bottle.jpg",
+    "featured": true
+  }
+]

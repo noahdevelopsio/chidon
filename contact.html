@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/mobile.css">
 
     <!-- Feather Icons -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 </head>
 <body>
 
@@ -68,6 +68,7 @@
                     <div class="fade-in">
                         <h2>Send Us a Message</h2>
                         <form id="contact-form" role="form" aria-labelledby="contact-form-title">
+                            <h2 id="contact-form-title" class="sr-only">Contact Form</h2>
                             <div class="form-group">
                                 <label for="name" class="form-label">Full Name</label>
                                 <input type="text" id="name" name="name" class="form-control" required aria-required="true" aria-describedby="name-error">

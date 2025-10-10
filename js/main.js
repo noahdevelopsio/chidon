@@ -1,26 +1,23 @@
 /* --- CHIDON KITCHEN: MAIN JAVASCRIPT --- */
 
-// This script handles sitewide functionality like navigation, animations, footer updates, cart, and auth.
+// This script handles sitewide functionality like navigation, animations, and footer updates.
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 import firebaseConfig from './firebase-config.js';
-import { CURRENCY_SYMBOL } from './config.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const auth = getAuth(app);
 
     // 1. Initialize Feather Icons
     feather.replace();
 
-    // 2. Load featured products if on homepage
+    // Load featured products if on homepage
     const featuredProductsContainer = document.getElementById('featured-products');
     if (featuredProductsContainer) {
         try {
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
             const q = query(collection(db, "products"), where("featured", "==", true));
             const querySnapshot = await getDocs(q);
             let featuredProducts = [];
@@ -57,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // 3. Mobile Navigation Toggle
+    // 2. Mobile Navigation Toggle
     const mobileNavToggle = document.getElementById('mobile-nav-toggle');
     const navbarMenu = document.getElementById('navbar-menu');
 
@@ -74,13 +71,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // 4. Dynamic Copyright Year
+    // 3. Dynamic Copyright Year
     const currentYearSpan = document.getElementById('current-year');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
-    // 5. Smooth Fade-in Animation on Scroll
+    // 4. Smooth Fade-in Animation on Scroll
     const animatedElements = document.querySelectorAll('.fade-in');
     if (animatedElements.length > 0) {
         const observer = new IntersectionObserver((entries) => {
@@ -99,61 +96,63 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // 6. Active Nav Link Highlighter
+    // 5. Active Nav Link Highlighter
     const navLinks = document.querySelectorAll('.main-nav__link, .bottom-nav__item a');
     const currentPage = window.location.pathname.split('/').pop();
     
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href').split('/').pop();
+        
         link.classList.remove('active');
+
         if ((currentPage === '' || currentPage === 'index.html') && linkPage === 'index.html') {
             link.classList.add('active');
         } else if (linkPage !== 'index.html' && window.location.pathname.includes(link.getAttribute('href'))) {
-            link.classList.add('active');
+             link.classList.add('active');
         }
     });
 
-    // 7. Cart Toggle (only on shop page)
+    // 6. Cart Toggle Functionality
     const cartToggle = document.getElementById('cart-toggle');
     const cartModal = document.getElementById('cart-modal');
-    const cartOverlay = document.getElementById('cart-overlay');
     const cartClose = document.getElementById('cart-close');
+    const cartOverlay = document.getElementById('cart-overlay');
 
     if (cartToggle && cartModal) {
         cartToggle.addEventListener('click', () => {
-            cartModal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            cartModal.style.display = 'flex';
         });
+    }
 
-        const closeCart = () => {
+    if (cartClose) {
+        cartClose.addEventListener('click', () => {
             cartModal.style.display = 'none';
-            document.body.style.overflow = '';
-        };
-
-        cartClose.addEventListener('click', closeCart);
-        cartOverlay.addEventListener('click', closeCart);
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && cartModal.style.display === 'block') {
-                closeCart();
-            }
         });
     }
 
-    // 8. Auth Listener for Admin Link
-    const navbarMenu = document.getElementById('navbar-menu');
-    if (navbarMenu) {
-        onAuthStateChanged(auth, (user) => {
-            const existingAdminLink = navbarMenu.querySelector('.admin-link');
-            if (existingAdminLink) {
-                existingAdminLink.remove();
-            }
-            if (user) {
-                const adminLink = document.createElement('li');
-                adminLink.innerHTML = '<a href="admin.html" class="main-nav__link admin-link">Admin</a>';
-                navbarMenu.appendChild(adminLink);
-            }
+    if (cartOverlay) {
+        cartOverlay.addEventListener('click', () => {
+            cartModal.style.display = 'none';
         });
     }
+
+    // 7. Auth Listener for Admin Link
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+        const navMenu = document.getElementById('navbar-menu');
+        if (user) {
+            // Add admin link if not exists
+            if (!document.querySelector('.main-nav__link[href="admin.html"]')) {
+                const adminLi = document.createElement('li');
+                adminLi.innerHTML = '<a href="admin.html" class="main-nav__link">Admin</a>';
+                navMenu.appendChild(adminLi);
+            }
+        } else {
+            // Remove admin link if exists
+            const adminLink = document.querySelector('.main-nav__link[href="admin.html"]');
+            if (adminLink) {
+                adminLink.parentElement.remove();
+            }
+        }
+    });
 });
