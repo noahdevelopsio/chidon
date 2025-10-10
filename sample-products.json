@@ -47,6 +47,54 @@
       "category": "Utensils",
       "featured": false,
       "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/utensil_set.jpg"
+    },
+    {
+      "name": "Dutch Oven with Lid",
+      "description": "5-quart enameled cast iron Dutch oven. Perfect for slow cooking, braising, and baking. Comes with a tight-fitting lid.",
+      "price": 79.99,
+      "category": "Cookware",
+      "featured": true,
+      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/dutch_oven.jpg"
+    },
+    {
+      "name": "Bamboo Steamer Basket",
+      "description": "10-inch bamboo steamer basket for healthy steaming. Stackable design with two tiers. Natural and eco-friendly.",
+      "price": 19.99,
+      "category": "Cookware",
+      "featured": false,
+      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/bamboo_steamer.jpg"
+    },
+    {
+      "name": "Ceramic Knife Set (3-Piece)",
+      "description": "Set of three ceramic knives: chef's knife, utility knife, and paring knife. Ultra-sharp and lightweight.",
+      "price": 49.99,
+      "category": "Cutlery",
+      "featured": false,
+      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/ceramic_knives.jpg"
+    },
+    {
+      "name": "Silicone Baking Mat",
+      "description": "Non-stick silicone baking mat for cookies, pastries, and more. Reusable and easy to clean. Fits standard baking sheets.",
+      "price": 14.99,
+      "category": "Utensils",
+      "featured": false,
+      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/baking_mat.jpg"
+    },
+    {
+      "name": "Stainless Steel Measuring Cups (Set of 4)",
+      "description": "Set of four stainless steel measuring cups: 1/4 cup, 1/3 cup, 1/2 cup, and 1 cup. Durable and stackable.",
+      "price": 12.99,
+      "category": "Utensils",
+      "featured": false,
+      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/measuring_cups.jpg"
+    },
+    {
+      "name": "Plastic Food Containers (10-Pack)",
+      "description": "Set of ten plastic food containers with snap-on lids. Microwave and dishwasher safe. Various sizes for different needs.",
+      "price": 9.99,
+      "category": "Storage",
+      "featured": false,
+      "imageUrl": "https://res.cloudinary.com/demo/image/upload/w_400,h_300,c_pad/plastic_containers.jpg"
     }
   ]
 }
