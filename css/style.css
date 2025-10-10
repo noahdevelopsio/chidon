@@ -642,6 +642,10 @@ img {
   font-size: 12px;
 }
 
+.bottom-nav {
+  display: none;
+}
+
 /* Animations */
 .fade-in {
   opacity: 0;

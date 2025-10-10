@@ -35,6 +35,10 @@
                 <button class="main-nav__toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
                     <i data-feather="menu"></i>
                 </button>
+                <button id="cart-toggle-mobile" class="cart-toggle-mobile" aria-label="Open cart" style="display: none;">
+                    <i data-feather="shopping-cart"></i>
+                    <span id="cart-count-mobile" class="cart-count">0</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -48,111 +52,119 @@
             </div>
         </section>
 
-        <section class="section-padding">
-            <div class="container text-center">
-                <h2 class="fade-in">Why Chidon Kitchen?</h2>
-                <p class="lead fade-in">We provide tools that inspire creativity and last a lifetime.</p>
-                <div class="grid-3" style="margin-top: 4rem;">
-                    <div class="feature-card fade-in">
-                        <i data-feather="award" style="width: 48px; height: 48px;"></i>
-                        <h3>Quality Craftsmanship</h3>
-                        <p>Every item is selected for its durability, performance, and design.</p>
+        <div class="ad-container">
+            <div class="content">
+                <section class="section-padding">
+                    <div class="container text-center">
+                        <h2 class="fade-in">Why Chidon Kitchen?</h2>
+                        <p class="lead fade-in">We provide tools that inspire creativity and last a lifetime.</p>
+                        <div class="grid-3" style="margin-top: 4rem;">
+                            <div class="feature-card fade-in">
+                                <i data-feather="award" style="width: 48px; height: 48px;"></i>
+                                <h3>Quality Craftsmanship</h3>
+                                <p>Every item is selected for its durability, performance, and design.</p>
+                            </div>
+                            <div class="feature-card fade-in">
+                                <i data-feather="truck" style="width: 48px; height: 48px;"></i>
+                                <h3>Fast Shipping</h3>
+                                <p>We ship your order within 24 hours, so you can start cooking sooner.</p>
+                            </div>
+                            <div class="feature-card fade-in">
+                                <i data-feather="smile" style="width: 48px; height: 48px;"></i>
+                                <h3>Happy Customers</h3>
+                                <p>We're proud of our 5-star rating and our friendly customer support.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="feature-card fade-in">
-                        <i data-feather="truck" style="width: 48px; height: 48px;"></i>
-                        <h3>Fast Shipping</h3>
-                        <p>We ship your order within 24 hours, so you can start cooking sooner.</p>
-                    </div>
-                    <div class="feature-card fade-in">
-                        <i data-feather="smile" style="width: 48px; height: 48px;"></i>
-                        <h3>Happy Customers</h3>
-                        <p>We're proud of our 5-star rating and our friendly customer support.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <section class="section-padding">
-            <div class="container text-center">
-                <h2 class="fade-in">Featured Categories</h2>
-                <p class="lead fade-in">Explore our curated collections.</p>
-                <div class="grid-4" style="margin-top: 4rem;">
-                    <a href="shop.html?category=cookware" class="category-card fade-in">
-                        <i data-feather="pot" style="width: 48px; height: 48px;"></i>
-                        <h3>Cookware</h3>
-                        <p>Pans, pots, and bakeware essentials.</p>
-                    </a>
-                    <a href="shop.html?category=cutlery" class="category-card fade-in">
-                        <i data-feather="cutlery" style="width: 48px; height: 48px;"></i>
-                        <h3>Cutlery</h3>
-                        <p>Knives and utensils for precision.</p>
-                    </a>
-                    <a href="shop.html?category=storage" class="category-card fade-in">
-                        <i data-feather="package" style="width: 48px; height: 48px;"></i>
-                        <h3>Storage</h3>
-                        <p>Organize with jars and containers.</p>
-                    </a>
-                    <a href="shop.html?category=utensils" class="category-card fade-in">
-                        <i data-feather="tool" style="width: 48px; height: 48px;"></i>
-                        <h3>Utensils</h3>
-                        <p>Spatulas, spoons, and more.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding section-bg">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="fade-in">Featured Products</h2>
-                    <p class="fade-in">A few of our customer favorites.</p>
-                </div>
-                <div id="featured-products" class="grid-4" style="margin-top: 4rem;">
-                    <!-- Products will be dynamically loaded here by main.js -->
-                </div>
-                <div class="text-center" style="margin-top: 3rem;">
-                    <a href="shop.html" class="btn btn-secondary fade-in">View All Products</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="fade-in">Visit Our Store</h2>
-                    <p class="lead fade-in">Come see our full collection in person.</p>
-                </div>
-                <div class="map-container fade-in" style="margin-top: 3rem;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.953736315316!3d-37.81626997975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ5JzU4LjQiUyAxNDTCsDU3JzE2LjEiRQ!5e0!3m2!1sen!2sau!4v1630000000000" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="text-center" style="margin-top: 2rem;">
-                    <p>123 Culinary Lane, Melbourne, VIC 3000</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding section-bg">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="fade-in">What Our Customers Say</h2>
-                    <p class="lead fade-in">Join thousands of happy home chefs.</p>
-                </div>
-                <div class="grid-3" style="margin-top: 4rem;">
-                    <div class="testimonial fade-in">
-                        <p class="testimonial-quote">"The quality of these tools is unmatched. My kitchen feels professional now!"</p>
-                        <p class="testimonial-author">- Sarah M., Melbourne</p>
+                <section class="section-padding">
+                    <div class="container text-center">
+                        <h2 class="fade-in">Featured Categories</h2>
+                        <p class="lead fade-in">Explore our curated collections.</p>
+                        <div class="grid-4" style="margin-top: 4rem;">
+                            <a href="shop.html?category=cookware" class="category-card fade-in">
+                                <i data-feather="pot" style="width: 48px; height: 48px;"></i>
+                                <h3>Cookware</h3>
+                                <p>Pans, pots, and bakeware essentials.</p>
+                            </a>
+                            <a href="shop.html?category=cutlery" class="category-card fade-in">
+                                <i data-feather="cutlery" style="width: 48px; height: 48px;"></i>
+                                <h3>Cutlery</h3>
+                                <p>Knives and utensils for precision.</p>
+                            </a>
+                            <a href="shop.html?category=storage" class="category-card fade-in">
+                                <i data-feather="package" style="width: 48px; height: 48px;"></i>
+                                <h3>Storage</h3>
+                                <p>Organize with jars and containers.</p>
+                            </a>
+                            <a href="shop.html?category=utensils" class="category-card fade-in">
+                                <i data-feather="tool" style="width: 48px; height: 48px;"></i>
+                                <h3>Utensils</h3>
+                                <p>Spatulas, spoons, and more.</p>
+                            </a>
+                        </div>
                     </div>
-                    <div class="testimonial fade-in">
-                        <p class="testimonial-quote">"Fast delivery and excellent customer service. Highly recommend!"</p>
-                        <p class="testimonial-author">- James L., Sydney</p>
+                </section>
+
+                <section class="section-padding section-bg">
+                    <div class="container">
+                        <div class="text-center">
+                            <h2 class="fade-in">Featured Products</h2>
+                            <p class="fade-in">A few of our customer favorites.</p>
+                        </div>
+                        <div id="featured-products" class="grid-4" style="margin-top: 4rem;">
+                            <!-- Products will be dynamically loaded here by main.js -->
+                        </div>
+                        <div class="text-center" style="margin-top: 3rem;">
+                            <a href="shop.html" class="btn btn-secondary fade-in">View All Products</a>
+                        </div>
                     </div>
-                    <div class="testimonial fade-in">
-                        <p class="testimonial-quote">"Love the variety and prices. Perfect for upgrading my cookware."</p>
-                        <p class="testimonial-author">- Aisha K., Brisbane</p>
+                </section>
+
+                <section class="section-padding">
+                    <div class="container">
+                        <div class="text-center">
+                            <h2 class="fade-in">Visit Our Store</h2>
+                            <p class="lead fade-in">Come see our full collection in person.</p>
+                        </div>
+                        <div class="map-container fade-in" style="margin-top: 3rem;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.953736315316!3d-37.81626997975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ5JzU4LjQiUyAxNDTCsDU3JzE2LjEiRQ!5e0!3m2!1sen!2sau!4v1630000000000" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="text-center" style="margin-top: 2rem;">
+                            <p>123 Culinary Lane, Melbourne, VIC 3000</p>
+                        </div>
                     </div>
-                </div>
+                </section>
+
+                <section class="section-padding section-bg">
+                    <div class="container">
+                        <div class="text-center">
+                            <h2 class="fade-in">What Our Customers Say</h2>
+                            <p class="lead fade-in">Join thousands of happy home chefs.</p>
+                        </div>
+                        <div class="grid-3" style="margin-top: 4rem;">
+                            <div class="testimonial fade-in">
+                                <p class="testimonial-quote">"The quality of these tools is unmatched. My kitchen feels professional now!"</p>
+                                <p class="testimonial-author">- Sarah M., Melbourne</p>
+                            </div>
+                            <div class="testimonial fade-in">
+                                <p class="testimonial-quote">"Fast delivery and excellent customer service. Highly recommend!"</p>
+                                <p class="testimonial-author">- James L., Sydney</p>
+                            </div>
+                            <div class="testimonial fade-in">
+                                <p class="testimonial-quote">"Love the variety and prices. Perfect for upgrading my cookware."</p>
+                                <p class="testimonial-author">- Aisha K., Brisbane</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
+            <div class="ad-slot">
+                <p>Advertisement</p>
+                <p>300x600</p>
+            </div>
+        </div>
     </main>
 
     <footer class="main-footer">
@@ -193,8 +205,36 @@
         </div>
     </nav>
 
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal" style="display: none;">
+        <div class="cart-overlay" id="cart-overlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button id="cart-close" class="btn-close" aria-label="Close cart">&times;</button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <!-- Cart items will be dynamically loaded here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: </span>
+                    <span id="cart-total">${CURRENCY_SYMBOL}0</span>
+                </div>
+                <button id="checkout-btn" class="btn btn-primary" style="display: none;">Checkout on WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Toggle Button -->
+    <button id="cart-toggle" class="cart-toggle" aria-label="Open cart" style="display: none;">
+        <i data-feather="shopping-cart"></i>
+        <span id="cart-count" class="cart-count">0</span>
+    </button>
+
     <!-- Custom JS -->
-    <script src="js/main.js"></script>
+    <script src="js/config.js"></script>
+    <script type="module" src="js/main.js"></script>
 
 </body>
 </html>

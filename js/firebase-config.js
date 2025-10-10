@@ -16,12 +16,12 @@
 // etc.
 
 const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-project.firebaseapp.com",
-  projectId: "your-project-id",
+  apiKey: "AIzaSyBlIYNznti_Gnwkp-Rl90LC1V-Nf8At3Y4",
+  authDomain: "chidon-kitchen.firebaseapp.com",
+  projectId: "chidon-kitchen",
   storageBucket: "your-project.firebasestorage.app",
-  messagingSenderId: "your-messaging-sender-id",
-  appId: "your-app-id"
+  messagingSenderId: "79436407271",
+  appId: "1:79436407271:web:e2d43e1bb60b3d2c0c5d42"
 };
 
 // Export the configuration object to be used by other scripts

@@ -77,6 +77,9 @@
   }
   
   .bottom-nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 12px 5px;
   }
   
@@ -87,11 +90,6 @@
   
   .bottom-nav__link span {
     font-size: 11px;
-  }
-  
-  /* Hide main header on mobile for bottom nav */
-  .main-header {
-    display: none;
   }
   
   /* Adjust cart toggle position */
