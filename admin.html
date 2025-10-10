@@ -103,9 +103,12 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="product-image" class="form-label">Image</label>
-                                <input type="file" id="product-image" class="form-control" accept="image/*">
+                                <label for="product-image" class="form-label">Image URL</label>
+                                <input type="text" id="product-image" class="form-control" placeholder="Image URL will be set after upload/select">
                                 <div id="upload-widget"></div>
+                                <div id="image-preview" style="margin-top: 10px;">
+                                    <img id="preview-img" style="max-width: 200px; border-radius: 8px; display: none; border: 1px solid #ddd;" alt="Image Preview">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">
@@ -144,7 +147,7 @@
     <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     
     <!-- Project Scripts -->
-    <script src="js/config.js"></script>
+    <script type="module" src="js/config.js"></script>
     <script type="module" src="js/firebase-config.js"></script>
     <script type="module" src="js/admin.js"></script>
     <script type="module" src="js/main.js"></script>

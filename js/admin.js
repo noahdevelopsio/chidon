@@ -156,16 +156,21 @@ function initCloudinaryWidget() {
         {
             cloudName: CLOUDINARY_CLOUD_NAME,
             uploadPreset: CLOUDINARY_UPLOAD_PRESET,
-            sources: ['local', 'url', 'camera'],
+            sources: ['local', 'url', 'cloudinary', 'camera', 'image_search', 'google_drive', 'facebook'],
             multiple: false,
             cropping: true,
             croppingAspectRatio: 1,
             showSkipCropButton: false,
-            folder: 'chidon-kitchen/products'
+            folder: 'chidon/products',
+            maxFileSize: 2097152
         },
         (error, result) => {
             if (!error && result && result.event === "success") {
-                document.getElementById('product-image').value = result.info.secure_url;
+                const url = result.info.secure_url;
+                document.getElementById('product-image').value = url;
+                const previewImg = document.getElementById('preview-img');
+                previewImg.src = url;
+                previewImg.style.display = 'block';
             }
         }
     );
@@ -175,6 +180,8 @@ function initCloudinaryWidget() {
         widget.open();
     });
 }
+
+
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
