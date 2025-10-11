@@ -12,12 +12,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <!-- Material Icons for specific icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
 
     <!-- Feather Icons -->
-    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js" onload="feather.replace()"></script>
 
 </head>
 <body>
@@ -82,12 +85,12 @@
                         <p class="lead fade-in">Explore our curated collections.</p>
                         <div class="grid-4" style="margin-top: 4rem;">
                             <a href="shop.html?category=cookware" class="category-card fade-in">
-                                <i data-feather="pot" style="width: 48px; height: 48px;"></i>
+                                <i class="material-icons" style="font-size: 48px;">kitchen</i>
                                 <h3>Cookware</h3>
                                 <p>Pans, pots, and bakeware essentials.</p>
                             </a>
                             <a href="shop.html?category=cutlery" class="category-card fade-in">
-                                <i data-feather="cutlery" style="width: 48px; height: 48px;"></i>
+                                <i class="material-icons" style="font-size: 48px;">restaurant</i>
                                 <h3>Cutlery</h3>
                                 <p>Knives and utensils for precision.</p>
                             </a>
@@ -97,7 +100,7 @@
                                 <p>Organize with jars and containers.</p>
                             </a>
                             <a href="shop.html?category=utensils" class="category-card fade-in">
-                                <i data-feather="tool" style="width: 48px; height: 48px;"></i>
+                                <i class="material-icons" style="font-size: 48px;">build</i>
                                 <h3>Utensils</h3>
                                 <p>Spatulas, spoons, and more.</p>
                             </a>
