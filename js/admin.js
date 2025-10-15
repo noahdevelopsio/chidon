@@ -150,9 +150,8 @@ async function deleteProduct(productId) {
     }
 }
 
-// Cloudinary widget
+/// Cloudinary widget
 function initCloudinaryWidget() {
-    // Ensure Cloudinary is available globally
     if (typeof window.cloudinary === 'undefined') {
         console.error('Cloudinary not loaded yet. Retrying in 1 second...');
         setTimeout(initCloudinaryWidget, 1000);
@@ -165,12 +164,18 @@ function initCloudinaryWidget() {
         return;
     }
 
-    // ✅ Create Upload Widget
+    // ✅ Add both upload & folder-restricted browsing
+    uploadDiv.innerHTML = `
+        <button type="button" class="btn btn-secondary" id="upload-btn">Upload Image</button>
+        <button type="button" class="btn btn-info" id="browse-btn">Browse from Folder</button>
+    `;
+
+    // ✅ Upload Widget (new image uploads only go to chidon/products)
     const uploadWidget = window.cloudinary.createUploadWidget({
         cloudName: CLOUDINARY_CLOUD_NAME,
         uploadPreset: CLOUDINARY_UPLOAD_PRESET,
-        folder: 'chidon/products',
-        sources: ['local', 'url', 'camera', 'image_search', 'google_drive', 'facebook'],
+        folder: 'chidon/products', // restrict uploads here
+        sources: ['local', 'camera', 'url'],
         multiple: false,
         maxFileSize: 2097152, // 2MB
         cropping: true,
@@ -189,38 +194,30 @@ function initCloudinaryWidget() {
         }
     });
 
-    // ✅ Create Upload Button
-    uploadDiv.innerHTML = `
-        <button type="button" class="btn btn-secondary" id="upload-btn">Upload Image</button>
-        <button type="button" class="btn btn-info" id="library-btn">Browse Library</button>
-    `;
-
-    // ✅ Upload Button Event
-    document.getElementById('upload-btn').addEventListener('click', () => uploadWidget.open(), false);
-
-    // ✅ Create Media Library Widget (restricted to your folder)
+    // ✅ Media Library Widget (only shows chidon/products folder)
     const libraryWidget = window.cloudinary.createMediaLibrary({
         cloud_name: CLOUDINARY_CLOUD_NAME,
         api_key: CLOUDINARY_API_KEY,
-        resource_type: 'image',
         multiple: false,
-        search: { expression: 'folder:"chidon/products"' },
-        default_transformations: []
-    }, (error, result) => {
-        if (!error && result && result.event === "assetSelected") {
-            const url = result.info.secure_url;
-            document.getElementById('product-image').value = url;
-            const previewImg = document.getElementById('preview-img');
-            previewImg.src = url;
-            previewImg.style.display = 'block';
-        } else if (error) {
-            console.error('Cloudinary library error:', error);
+        search: { expression: 'folder:"chidon/products"' }, // restrict browsing
+        resource_type: 'image'
+    }, {
+        insertHandler: (data) => {
+            if (data.assets && data.assets.length > 0) {
+                const url = data.assets[0].secure_url;
+                document.getElementById('product-image').value = url;
+                const previewImg = document.getElementById('preview-img');
+                previewImg.src = url;
+                previewImg.style.display = 'block';
+            }
         }
     });
 
-    // ✅ Library Button Event
-    document.getElementById('library-btn').addEventListener('click', () => libraryWidget.show(), false);
+    // ✅ Event Listeners
+    document.getElementById('upload-btn').addEventListener('click', () => uploadWidget.open(), false);
+    document.getElementById('browse-btn').addEventListener('click', () => libraryWidget.show(), false);
 }
+
 
 
 // Event listeners
