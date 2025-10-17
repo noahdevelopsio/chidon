@@ -2,12 +2,13 @@
 
 /* CSS Variables */
 :root {
-  --primary-color: #FFA94D;
-  --secondary-color: #f8f9fa;
-  --text-color: #444;
-  --text-light: #666;
-  --bg-color: #fff;
-  --border-color: #e0e0e0;
+  --primary-color: #DC143C;
+  --accent-color: #FF6347;
+  --secondary-color: #F8F8F8;
+  --text-color: #333333;
+  --text-light: #666666;
+  --bg-color: #FFFFFF;
+  --border-color: #E0E0E0;
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   --border-radius: 8px;
@@ -17,6 +18,7 @@
   --success-color: #28a745;
   --error-color: #dc3545;
 }
+
 
 /* Global Styles */
 * {
@@ -46,8 +48,9 @@ a {
 }
 
 a:hover {
-  color: #e6893a;
+  color: var(--accent-color);
 }
+
 
 img {
   max-width: 100%;
@@ -75,9 +78,10 @@ img {
 }
 
 .btn-primary:hover {
-  background-color: #e6893a;
+  background-color: var(--accent-color);
   transform: translateY(-2px);
 }
+
 
 .btn-secondary {
   background-color: var(--secondary-color);
@@ -155,6 +159,7 @@ img {
   z-index: 1000;
 }
 
+
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -197,11 +202,12 @@ img {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, var(--primary-color) 0%, #e6893a 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   color: white;
   padding: 120px 0;
   text-align: center;
 }
+
 
 .hero-section h1 {
   font-size: 48px;
@@ -249,6 +255,7 @@ img {
   opacity: 0;
   transform: translateY(20px);
 }
+
 
 .product-card:hover {
   transform: translateY(-5px);
@@ -331,6 +338,7 @@ img {
   transition: var(--transition);
 }
 
+
 .category-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
@@ -353,6 +361,7 @@ img {
   border-radius: var(--border-radius);
   box-shadow: var(--card-shadow);
 }
+
 
 .testimonial-quote {
   font-style: italic;
@@ -437,6 +446,7 @@ img {
   max-height: 80vh;
   overflow-y: auto;
 }
+
 
 .cart-header {
   display: flex;
@@ -589,6 +599,7 @@ img {
   padding: 40px 0 20px;
 }
 
+
 .social-icons {
   display: flex;
   justify-content: center;
@@ -617,6 +628,7 @@ img {
   display: flex;
   z-index: 1000;
 }
+
 
 .bottom-nav__item {
   flex: 1;
@@ -707,6 +719,7 @@ textarea.form-control {
   margin-bottom: 40px;
 }
 
+
 .product-list {
   margin-top: 40px;
 }
@@ -750,6 +763,7 @@ textarea.form-control {
     box-shadow: var(--shadow);
     gap: 15px;
   }
+
 
   .grid-2,
   .grid-3,
