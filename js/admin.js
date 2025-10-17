@@ -77,7 +77,8 @@ function renderProducts() {
             <div class="product-card__body">
                 <h3 class="product-card__title">${product.name || 'Unnamed Product'}</h3>
                 <p class="product-card__description">${product.description || ''}</p>
-                <p class="product-card__price">${CURRENCY_SYMBOL}${Number(product.price || 0).toFixed(2)}</p>
+                ${product.price ? `<p class="product-card__price">${CURRENCY_SYMBOL}${Number(product.price).toFixed(2)}</p>` : ''}
+
 
                 <div class="product-card__tags">
                     <span class="product-card__tag">${product.category || 'Uncategorized'}</span>
