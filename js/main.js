@@ -6,8 +6,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 import firebaseConfig from './firebase-config.js';
+import { CURRENCY_SYMBOL } from './config.js';
+
 
 document.addEventListener('DOMContentLoaded', async () => {
+    // Initialize Firebase app once
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
 
     // 1. Initialize Feather Icons
     feather.replace();
@@ -16,8 +22,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const featuredProductsContainer = document.getElementById('featured-products');
     if (featuredProductsContainer) {
         try {
-            const app = initializeApp(firebaseConfig);
-            const db = getFirestore(app);
             const q = query(collection(db, "products"), where("featured", "==", true));
             const querySnapshot = await getDocs(q);
             let featuredProducts = [];
@@ -53,6 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             featuredProductsContainer.innerHTML = '<p class="text-center">Error loading featured products.</p>';
         }
     }
+
 
     // 2. Mobile Navigation Toggle
     const mobileNavToggle = document.getElementById('mobile-nav-toggle');
@@ -137,7 +142,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // 7. Auth Listener for Admin Link
-    const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
         const navMenu = document.getElementById('navbar-menu');
         if (user) {
@@ -155,4 +159,5 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
     });
+
 });
