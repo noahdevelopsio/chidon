@@ -4,9 +4,10 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
-import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc, query, orderBy } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc, query } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 import firebaseConfig from './firebase-config.js';
-import { CLOUDINARY_CLOUD_NAME, CLOUDINARY_UPLOAD_PRESET, CLOUDINARY_API_KEY } from './config.js';
+import { CLOUDINARY_CLOUD_NAME, CLOUDINARY_UPLOAD_PRESET, CLOUDINARY_API_KEY, CURRENCY_SYMBOL } from './config.js';
+
 
 let currentUser = null;
 let products = [];
@@ -46,36 +47,40 @@ onAuthStateChanged(auth, (user) => {
 // Load products
 async function loadProducts() {
     try {
-        const q = query(collection(db, "products"), orderBy("name"));
+        const q = query(collection(db, "products"));
         const querySnapshot = await getDocs(q);
         products = [];
         querySnapshot.forEach((doc) => {
             products.push({ id: doc.id, ...doc.data() });
         });
+        // Sort products by name
+        products.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
         renderProducts();
     } catch (error) {
         console.error("Error loading products:", error);
     }
 }
 
+
 // Render products
 function renderProducts() {
     const container = document.getElementById('products-container');
     container.innerHTML = '';
-    
+
     products.forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.className = 'product-card';
         productDiv.innerHTML = `
             <div class="product-card__image-container">
-                <img src="${product.imageUrl || 'images/placeholder.jpg'}" alt="${product.name}" class="product-card__image">
+                <img src="${product.imageUrl || 'images/placeholder.jpg'}" alt="${product.name || 'Product'}" class="product-card__image">
             </div>
             <div class="product-card__body">
-                <h3 class="product-card__title">${product.name}</h3>
-                <p class="product-card__description">${product.description}</p>
-                <p class="product-card__price">$${Number(product.price).toFixed(2)}</p>
+                <h3 class="product-card__title">${product.name || 'Unnamed Product'}</h3>
+                <p class="product-card__description">${product.description || ''}</p>
+                <p class="product-card__price">${CURRENCY_SYMBOL}${Number(product.price || 0).toFixed(2)}</p>
+
                 <div class="product-card__tags">
-                    <span class="product-card__tag">${product.category}</span>
+                    <span class="product-card__tag">${product.category || 'Uncategorized'}</span>
                     ${product.featured ? '<span class="product-card__tag featured">Featured</span>' : ''}
                 </div>
                 <div class="product-actions">
@@ -86,6 +91,7 @@ function renderProducts() {
         `;
         container.appendChild(productDiv);
     });
+
     
     // Add event listeners
     document.querySelectorAll('.edit-btn').forEach(btn => {
@@ -94,13 +100,19 @@ function renderProducts() {
             editProduct(productId);
         });
     });
-    
+
     document.querySelectorAll('.delete-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const productId = e.target.dataset.productId;
             deleteProduct(productId);
         });
     });
+
+    // Make product cards visible with animation
+    requestAnimationFrame(() => {
+        document.querySelectorAll('#products-container .product-card').forEach(el => el.classList.add('is-visible'));
+    });
+
 }
 
 // Add/Edit product
@@ -113,6 +125,8 @@ async function saveProduct(productData, productId = null) {
         }
         loadProducts();
         document.getElementById('product-form').reset();
+        // Reset button text to add mode
+        document.querySelector('#product-form button[type="submit"]').textContent = 'Add Product';
         document.getElementById('product-status').textContent = 'Product saved successfully!';
         setTimeout(() => {
             document.getElementById('product-status').textContent = '';
@@ -123,20 +137,38 @@ async function saveProduct(productData, productId = null) {
     }
 }
 
+
 // Edit product
 function editProduct(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
-    
-    document.getElementById('product-name').value = product.name;
-    document.getElementById('product-description').value = product.description;
-    document.getElementById('product-price').value = product.price;
-    document.getElementById('product-category').value = product.category;
+
+    document.getElementById('product-name').value = (product.name && product.name !== 'undefined') ? product.name : '';
+    document.getElementById('product-description').value = (product.description && product.description !== 'undefined') ? product.description : '';
+    document.getElementById('product-price').value = (product.price && product.price !== 'undefined' && !isNaN(Number(product.price))) ? product.price : '';
+    document.getElementById('product-category').value = (product.category && product.category !== 'undefined') ? product.category : '';
+    document.getElementById('product-image').value = product.imageUrl || '';
     document.getElementById('product-featured').checked = product.featured || false;
-    
+
+    // Show image preview if image exists
+    const previewImg = document.getElementById('preview-img');
+    if (product.imageUrl) {
+        previewImg.src = product.imageUrl;
+        previewImg.style.display = 'block';
+    } else {
+        previewImg.style.display = 'none';
+    }
+
+    // Change button text to indicate update mode
+    document.querySelector('#product-form button[type="submit"]').textContent = 'Update Product';
+
     // Store product ID for update
     document.getElementById('product-form').dataset.productId = productId;
 }
+
+
+
+
 
 // Delete product
 async function deleteProduct(productId) {
@@ -262,11 +294,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const productData = {
                 name: document.getElementById('product-name').value,
                 description: document.getElementById('product-description').value,
-                price: parseFloat(document.getElementById('product-price').value),
+                price: document.getElementById('product-price').value ? parseFloat(document.getElementById('product-price').value) : null,
                 category: document.getElementById('product-category').value,
                 imageUrl: document.getElementById('product-image').value || 'images/placeholder.jpg',
                 featured: document.getElementById('product-featured').checked
             };
+
             
             const productId = productForm.dataset.productId;
             await saveProduct(productData, productId);
