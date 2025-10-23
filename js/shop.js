@@ -9,6 +9,13 @@ import { WHATSAPP_NUMBER, CURRENCY_SYMBOL } from './config.js';
 
 let allProducts = [];
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
+// Clean cart data to ensure valid numbers
+cart = cart.filter(item => item && item.id).map(item => ({
+    ...item,
+    price: Number(item.price) || null,
+    quantity: Number(item.quantity) || 1
+}));
+
 
 // Initialize shop
 export async function initShop() {
@@ -54,25 +61,21 @@ function renderProducts(products) {
             <div class="product-card__body">
                 <h3 class="product-card__title">${product.name}</h3>
                 <p class="product-card__description">${product.description ? product.description.substring(0, 100) + '...' : ''}</p>
-                <p class="product-card__price">${CURRENCY_SYMBOL}${Number(product.price).toFixed(2)}</p>
+                <p class="product-card__price">${product.price ? CURRENCY_SYMBOL + Number(product.price).toFixed(2) : 'Price on request'}</p>
                 ${product.category ? `<div class="product-card__tags"><span class="product-card__tag">${product.category}</span></div>` : ''}
                 <button class="btn btn-primary add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button>
+
             </div>
         `;
         productGrid.appendChild(card);
     });
-    
+
+
     requestAnimationFrame(() => {
         document.querySelectorAll('.product-card.fade-in').forEach(el => el.classList.add('is-visible'));
     });
-    
-    // Add event listeners to Add to Cart buttons
-    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const productId = e.target.dataset.productId;
-            addToCart(productId);
-        });
-    });
+
+
 }
 
 // Populate category filter
@@ -148,31 +151,37 @@ function updateCartDisplay() {
     const cartItems = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
     const checkoutBtn = document.getElementById('checkout-btn');
-    
+
+    // Always show cart toggle
+    cartToggle.style.display = 'flex';
+
     if (cart.length > 0) {
-        cartToggle.style.display = 'flex';
-        cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = cart.reduce((sum, item) => sum + (Number(item.quantity) || 0), 0);
+        cartCount.style.display = 'flex';
     } else {
-        cartToggle.style.display = 'none';
+        cartCount.style.display = 'none';
     }
-    
+
+
     cartItems.innerHTML = '';
     let total = 0;
-    
+
     cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
+        const price = Number(item.price) || 0;
+        const quantity = Number(item.quantity) || 0;
+        const itemTotal = price * quantity;
         total += itemTotal;
-        
+
         const itemDiv = document.createElement('div');
         itemDiv.className = 'cart-item';
         itemDiv.innerHTML = `
             <img src="${item.imageUrl || 'images/placeholder.jpg'}" alt="${item.name}" class="cart-item__image">
             <div class="cart-item__details">
                 <h4>${item.name}</h4>
-                <p>${CURRENCY_SYMBOL}${item.price.toFixed(2)} each</p>
+                <p>${price > 0 ? CURRENCY_SYMBOL + price.toFixed(2) : 'Price not set'} each</p>
                 <div class="cart-item__controls">
                     <button class="qty-btn" data-action="decrease" data-product-id="${item.id}">-</button>
-                    <span class="qty">${item.quantity}</span>
+                    <span class="qty">${quantity}</span>
                     <button class="qty-btn" data-action="increase" data-product-id="${item.id}">+</button>
                     <button class="remove-btn" data-product-id="${item.id}">Remove</button>
                 </div>
@@ -180,15 +189,16 @@ function updateCartDisplay() {
         `;
         cartItems.appendChild(itemDiv);
     });
-    
+
+
     cartTotal.textContent = `${CURRENCY_SYMBOL}${total.toFixed(2)}`;
-    
+
     if (cart.length > 0) {
         checkoutBtn.style.display = 'block';
     } else {
         checkoutBtn.style.display = 'none';
     }
-    
+
     // Add event listeners for cart controls
     document.querySelectorAll('.qty-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -196,13 +206,13 @@ function updateCartDisplay() {
             const action = e.target.dataset.action;
             const item = cart.find(item => item.id === productId);
             if (action === 'increase') {
-                updateCartItem(productId, item.quantity + 1);
+                updateCartItem(productId, (Number(item.quantity) || 0) + 1);
             } else if (action === 'decrease') {
-                updateCartItem(productId, item.quantity - 1);
+                updateCartItem(productId, (Number(item.quantity) || 0) - 1);
             }
         });
     });
-    
+
     document.querySelectorAll('.remove-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const productId = e.target.dataset.productId;
@@ -211,42 +221,64 @@ function updateCartDisplay() {
     });
 }
 
+
 // WhatsApp checkout
 function checkout() {
     if (cart.length === 0) return;
-    
+
     let message = `Hello! I'd like to order the following items:\n\n`;
     let total = 0;
-    
+
     cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
+        const price = Number(item.price) || 0;
+        const quantity = Number(item.quantity) || 0;
+        const itemTotal = price * quantity;
         total += itemTotal;
-        message += `${item.name} (x${item.quantity}) - ${CURRENCY_SYMBOL}${itemTotal.toFixed(2)}\n`;
+        message += `${item.name} (x${quantity}) - ${price > 0 ? CURRENCY_SYMBOL + itemTotal.toFixed(2) : 'Price not set'}\n`;
     });
-    
+
     message += `\nTotal: ${CURRENCY_SYMBOL}${total.toFixed(2)}\n\nPlease confirm my order.`;
-    
+
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
 
+
+
+
+
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
     initShop();
-    
+
     const searchBar = document.getElementById('search-bar');
     const categoryFilter = document.getElementById('category-filter');
     const checkoutBtn = document.getElementById('checkout-btn');
-    
+    const productGrid = document.getElementById('product-grid');
+
     if (searchBar) {
         searchBar.addEventListener('input', filterProducts);
     }
-    
+
     if (categoryFilter) {
         categoryFilter.addEventListener('change', filterProducts);
     }
-    
+
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', checkout);
     }
+
+    // Event delegation for add to cart buttons - using document to ensure it works
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('add-to-cart-btn')) {
+            e.preventDefault();
+            const productId = e.target.dataset.productId;
+            addToCart(productId);
+        }
+    });
+
+
+
+
+
 });

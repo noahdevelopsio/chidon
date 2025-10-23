@@ -40,12 +40,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <div class="product-card__body">
                             <h3 class="product-card__title">${product.name}</h3>
                             <p class="product-card__description">${product.description ? product.description.substring(0, 100) + '...' : ''}</p>
-                            <p class="product-card__price">${CURRENCY_SYMBOL}${Number(product.price).toFixed(2)}</p>
+                            <p class="product-card__price">${product.price ? CURRENCY_SYMBOL + Number(product.price).toFixed(2) : 'Price on request'}</p>
                             ${product.category ? `<div class="product-card__tags"><span class="product-card__tag">${product.category}</span></div>` : ''}
                         </div>
                     `;
                     featuredProductsContainer.appendChild(card);
                 });
+
                 requestAnimationFrame(() => {
                     document.querySelectorAll('.product-card.fade-in', featuredProductsContainer).forEach(el => el.classList.add('is-visible'));
                 });
