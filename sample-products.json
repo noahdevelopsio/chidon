@@ -94,5 +94,37 @@
     "category": "storage",
     "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/water_bottle.jpg",
     "featured": true
+  },
+  {
+    "name": "Stand Mixer",
+    "description": "5-quart stand mixer with 10-speed settings and multiple attachments. Perfect for baking and cooking enthusiasts.",
+    "price": 299.99,
+    "category": "equipment",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/stand_mixer.jpg",
+    "featured": true
+  },
+  {
+    "name": "Blender",
+    "description": "High-speed blender with 72oz jar and multiple speed settings. Great for smoothies, soups, and sauces.",
+    "price": 149.99,
+    "category": "equipment",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/blender.jpg",
+    "featured": false
+  },
+  {
+    "name": "Coffee Maker",
+    "description": "12-cup programmable coffee maker with thermal carafe. Brews fresh coffee automatically.",
+    "price": 89.99,
+    "category": "equipment",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/coffee_maker.jpg",
+    "featured": false
+  },
+  {
+    "name": "Food Processor",
+    "description": "14-cup food processor with multiple blades and attachments. Perfect for chopping, slicing, and shredding.",
+    "price": 199.99,
+    "category": "equipment",
+    "imageUrl": "https://res.cloudinary.com/demo/image/upload/v1630000000/sample/food_processor.jpg",
+    "featured": true
   }
 ]
