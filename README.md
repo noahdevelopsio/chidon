@@ -1,6 +1,7 @@
-# Chidon Kitchen E-Commerce Website
+# Chidon Kitchen Worldwide E-Commerce Website
 
-Welcome to the Chidon Kitchen e-commerce website! This project is a complete, modern, and fully responsive website designed for a kitchen supply store. It's built with HTML, CSS, and vanilla JavaScript, and it uses Firebase for the backend and Cloudinary for image hosting. The site is designed to be fast, easy to customize, and simple to deploy.
+Welcome to the Chidon Kitchen Worldwide e-commerce website! This project is a complete, modern, and fully responsive website designed for a kitchen supply store. It's built with HTML, CSS, and vanilla JavaScript, and it uses Firebase for the backend and Cloudinary for image hosting. The site is designed to be fast, easy to customize, and simple to deploy.
+
 
 ## Features
 
