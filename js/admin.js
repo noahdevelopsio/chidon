@@ -211,7 +211,7 @@ function initCloudinaryWidget() {
         sources: ['local', 'camera', 'url'],
         multiple: false,
         maxFileSize: 2097152, // 2MB
-        cropping: true,
+        cropping: false,
         croppingAspectRatio: 1,
         showSkipCropButton: false,
         theme: 'minimal'
