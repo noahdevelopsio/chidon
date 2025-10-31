@@ -484,7 +484,7 @@ img {
 
 /* Product Cards */
 .product-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.891);
   backdrop-filter: blur(20px);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--card-shadow);
