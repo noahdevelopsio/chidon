@@ -21,6 +21,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/components.css">
+
 
 
 
@@ -41,13 +43,28 @@
             <nav class="main-nav">
                 <a href="index.html" class="main-nav__brand">Chidon Kitchen Worldwide</a>
 
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <form action="shop.html" method="GET" class="search-form">
+                        <input type="text" name="search" placeholder="Search products..." class="search-input" aria-label="Search products">
+                        <button type="submit" class="search-btn" aria-label="Search">
+                            <i data-feather="search"></i>
+                        </button>
+                    </form>
+                </div>
+
                 <ul class="main-nav__menu" id="navbar-menu">
                     <li><a href="index.html" class="main-nav__link active">Home</a></li>
                     <li><a href="shop.html" class="main-nav__link">Shop</a></li>
                     <li><a href="about.html" class="main-nav__link">About</a></li>
                     <li><a href="contact.html" class="main-nav__link">Contact</a></li>
                 </ul>
-                
+
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i data-feather="moon"></i>
+                </button>
+
                 <button id="cart-toggle-mobile" class="cart-toggle-mobile" aria-label="Open cart" style="display: none;">
                     <i data-feather="shopping-cart"></i>
                     <span id="cart-count-mobile" class="cart-count">0</span>
@@ -56,6 +73,7 @@
         </div>
     </header>
 
+
     <main>
         <section class="hero-section">
             <div class="hero-carousel">
@@ -63,11 +81,44 @@
                 <div class="hero-slide" style="background-image: url('images/hero2.jpeg');"></div>
             </div>
             <div class="hero-content">
-                <h1>Industrial Equipment Solutions</h1>
-                <p>Delivering high quality industrial machines and equipment for bakeries, laundries, restaurants, hotels, and supermarkets.</p>
-                <a href="shop.html" class="btn btn-primary">Shop Now</a>
+                <h1 class="hero-title animate-fade-in">Industrial Equipment Solutions</h1>
+                <p class="hero-subtitle animate-fade-in">Delivering high quality industrial machines and equipment for bakeries, laundries, restaurants, hotels, and supermarkets.</p>
+                <a href="shop.html" class="btn btn-primary hero-cta animate-bounce">Shop Now</a>
+            </div>
+            <!-- Floating Particles -->
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
             </div>
         </section>
+
+        <!-- Trust Badges & Statistics -->
+        <section class="trust-section">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Products Sold</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Customer Satisfaction</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
 
 
@@ -172,25 +223,56 @@
                     <div class="container">
                         <div class="text-center">
                             <h2 class="fade-in">What Our Customers Say</h2>
-                            <p class="lead fade-in">Join thousands of happy home chefs.</p>
+                            <p class="lead fade-in">Join thousands of satisfied businesses across Nigeria.</p>
                         </div>
                         <div class="grid-3" style="margin-top: 4rem;">
                             <div class="testimonial fade-in">
+                                <div class="testimonial-avatar">
+                                    <img src="images/avatar1.jpg" alt="Adebayo Bakery" loading="lazy">
+                                </div>
                                 <p class="testimonial-quote">"The industrial ovens from Chidon Kitchen have transformed our bakery operations. Reliable and efficient!"</p>
                                 <p class="testimonial-author">- Adebayo Bakery, Lagos</p>
+                                <div class="testimonial-rating">
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                </div>
                             </div>
                             <div class="testimonial fade-in">
+                                <div class="testimonial-avatar">
+                                    <img src="images/avatar2.jpg" alt="Lagos Grand Hotel" loading="lazy">
+                                </div>
                                 <p class="testimonial-quote">"Their commercial dishwashers and refrigeration units keep our restaurant running smoothly 24/7."</p>
                                 <p class="testimonial-author">- Lagos Grand Hotel</p>
+                                <div class="testimonial-rating">
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                </div>
                             </div>
                             <div class="testimonial fade-in">
+                                <div class="testimonial-avatar">
+                                    <img src="images/avatar3.jpg" alt="Royal Suites Hotel" loading="lazy">
+                                </div>
                                 <p class="testimonial-quote">"Outstanding industrial laundry equipment. Our hotel's linen service has never been better."</p>
                                 <p class="testimonial-author">- Royal Suites Hotel</p>
+                                <div class="testimonial-rating">
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                    <i data-feather="star" class="star filled"></i>
+                                </div>
                             </div>
                         </div>
 
                     </div>
                 </section>
+
             </div>
         </div>
     </main>
@@ -264,9 +346,15 @@
         <span id="cart-count" class="cart-count">0</span>
     </button>
 
+
+
     <!-- Custom JS -->
     <script src="js/config.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/theme.js"></script>
     <script type="module" src="js/main.js"></script>
+
+
 
 </body>
 </html>

@@ -16,6 +16,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/components.css">
+
 
     <!-- Font Awesome for TikTok icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -30,12 +32,28 @@
             <nav class="main-nav">
                 <a href="index.html" class="main-nav__brand">Chidon Kitchen Worldwide</a>
 
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <form action="shop.html" method="GET" class="search-form">
+                        <input type="text" name="search" placeholder="Search products..." class="search-input" aria-label="Search products">
+                        <button type="submit" class="search-btn" aria-label="Search">
+                            <i data-feather="search"></i>
+                        </button>
+                    </form>
+                </div>
+
                 <ul class="main-nav__menu" id="navbar-menu">
                     <li><a href="index.html" class="main-nav__link">Home</a></li>
                     <li><a href="shop.html" class="main-nav__link">Shop</a></li>
                     <li><a href="about.html" class="main-nav__link">About</a></li>
                     <li><a href="contact.html" class="main-nav__link active">Contact</a></li>
                 </ul>
+
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i data-feather="moon"></i>
+                </button>
+
             </nav>
         </div>
     </header>
@@ -147,7 +165,12 @@
         </div>
     </nav>
 
+    <!-- Custom JS -->
+    <script src="js/config.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/theme.js"></script>
     <script type="module" src="js/main.js"></script>
+
     <script>
         // Mock form submission for demonstration purposes
         document.getElementById('contact-form').addEventListener('submit', function(e) {
@@ -158,5 +181,6 @@
             this.reset();
         });
     </script>
+
 </body>
 </html>
