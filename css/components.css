@@ -47,6 +47,7 @@
 
 /* Theme Toggle */
 .theme-toggle {
+  display: none; /* Disabled for now */
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   border: 2px solid var(--glass-border);
@@ -393,43 +394,7 @@
   transform: scale(1.05);
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-  --bg-color: #1a1a1a;
-  --text-color: #ffffff;
-  --text-light: #cccccc;
-  --secondary-color: #2a2a2a;
-  --border-color: #404040;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-}
 
-body.dark-mode .feature-card,
-body.dark-mode .product-card,
-body.dark-mode .category-card,
-body.dark-mode .testimonial,
-body.dark-mode .trust-item {
-  background: rgba(42, 42, 42, 0.95);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode .search-form,
-body.dark-mode .theme-toggle {
-  background: rgba(42, 42, 42, 0.9);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode .trust-section {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-}
-
-body.dark-mode .main-header {
-  background: rgba(42, 42, 42, 0.95);
-  backdrop-filter: blur(20px);
-}
-
-body.dark-mode .main-nav__menu {
-  background: rgba(42, 42, 42, 0.98);
-}
 
 
 /* Mobile Enhancements */
