@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "id": "commercial-oven",
+      "name": "Commercial Convection Oven",
+      "description": "High-capacity oven for baking and roasting in professional kitchens. Energy-efficient with even heat distribution.",
+      "price": "₦450,000",
+      "category": "Equipment",
+      "tags": ["Equipment", "Bakery"],
+      "image": "images/products/commercial-oven.jpg",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html#commercial-oven"
+    },
+    {
+      "id": "stainless-steel-pot",
+      "name": "Stainless Steel Stock Pot (50L)",
+      "description": "Durable, heavy-duty pot ideal for soups, stews, and large-scale cooking in restaurants and hotels.",
+      "price": "₦25,000",
+      "category": "Cookware",
+      "tags": ["Cookware", "Restaurant"],
+      "image": "images/products/stainless-steel-pot.jpg",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html#stainless-steel-pot"
+    },
+    {
+      "id": "industrial-mixer",
+      "name": "Planetary Stand Mixer (20L)",
+      "description": "Powerful mixer for dough, batter, and creams. Perfect for bakeries and catering services.",
+      "price": "₦180,000",
+      "category": "Equipment",
+      "tags": ["Equipment", "Bakery"],
+      "image": "images/products/industrial-mixer.jpg",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html#industrial-mixer"
+    },
+    {
+      "id": "storage-rack",
+      "name": "Stainless Steel Storage Rack",
+      "description": "Robust shelving unit for organizing kitchen supplies, utensils, and ingredients in commercial spaces.",
+      "price": "₦35,000",
+      "category": "Storage",
+      "tags": ["Storage", "Hotel"],
+      "image": "images/products/storage-rack.jpg",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html#storage-rack"
+    },
+    {
+      "id": "commercial-fryer",
+      "name": "Commercial Deep Fryer",
+      "description": "Heavy-duty fryer for restaurants and fast food operations. Large capacity with temperature control.",
+      "price": "₦120,000",
+      "category": "Equipment",
+      "tags": ["Equipment", "Restaurant"],
+      "image": "images/products/commercial-fryer.jpg",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html#commercial-fryer"
+    },
+    {
+      "id": "bakery-oven",
+      "name": "Bakery Deck Oven",
+      "description": "Traditional deck oven for artisanal baking. Perfect for breads, pizzas, and pastries.",
+      "price": "₦350,000",
+      "category": "Equipment",
+      "tags": ["Equipment", "Bakery"],
+      "image": "images/products/bakery-oven.jpg",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html#bakery-oven"
+    },
+    {
+      "id": "refrigerator",
+      "name": "Commercial Refrigerator",
+      "description": "Large capacity refrigeration unit for storing food and beverages in commercial settings.",
+      "price": "₦250,000",
+      "category": "Equipment",
+      "tags": ["Equipment", "Restaurant"],
+      "image": "images/products/refrigerator.jpg",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html#refrigerator"
+    },
+    {
+      "id": "kitchen-utensils-set",
+      "name": "Professional Kitchen Utensils Set",
+      "description": "Complete set of stainless steel utensils for professional cooking and food preparation.",
+      "price": "₦15,000",
+      "category": "Utensils",
+      "tags": ["Utensils", "Tools"],
+      "image": "images/products/kitchen-utensils-set.jpg",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html#kitchen-utensils-set"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Cookware",
+      "description": "Pots, pans, and cooking vessels for professional kitchens",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html?category=cookware"
+    },
+    {
+      "name": "Equipment",
+      "description": "Heavy-duty machines and appliances for commercial use",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html?category=equipment"
+    },
+    {
+      "name": "Utensils",
+      "description": "Tools and implements for food preparation and service",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html?category=utensils"
+    },
+    {
+      "name": "Storage",
+      "description": "Shelving, containers, and organization solutions",
+      "url": "https://www.chidonkitchenworldwide.com.ng/shop.html?category=storage"
+    }
+  ],
+  "lastUpdated": "2024-01-01T00:00:00Z",
+  "totalProducts": 8
+}
