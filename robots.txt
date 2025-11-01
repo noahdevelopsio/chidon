@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chidonkitchen.com/sitemap.xml
+Sitemap: https://www.chidonkitchenworldwide.com.ng/sitemap.xml
